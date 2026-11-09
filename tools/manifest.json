@@ -1,0 +1,2168 @@
+{
+ "Next Step/1.jpg": {
+  "base": "assets/img/next-step/01",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#080808",
+   "#09090d",
+   "#7b7898",
+   "#010101",
+   "#050505",
+   "#19152d"
+  ]
+ },
+ "Next Step/4.jpg": {
+  "base": "assets/img/next-step/02",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#090909",
+   "#0c0b0e",
+   "#050409",
+   "#201b3b",
+   "#0c0918",
+   "#080904"
+  ]
+ },
+ "Next Step/6504.jpg": {
+  "base": "assets/img/next-step/03",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#1f1846",
+   "#4e39d3",
+   "#7868dc",
+   "#fbfafe",
+   "#c5bdee",
+   "#3d3375"
+  ]
+ },
+ "Next Step/6505.jpg": {
+  "base": "assets/img/next-step/04",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#040404",
+   "#aeb0b3",
+   "#2d2934",
+   "#090310",
+   "#020201",
+   "#020404"
+  ]
+ },
+ "Next Step/6.jpg": {
+  "base": "assets/img/next-step/05",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#060606",
+   "#1b1b1b",
+   "#1e1e22",
+   "#020202",
+   "#2e2b40",
+   "#0a0a0b"
+  ]
+ },
+ "Next Step/8.jpg": {
+  "base": "assets/img/next-step/06",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#040404",
+   "#ffffff",
+   "#13111c",
+   "#a2a0b4",
+   "#010101",
+   "#040403"
+  ]
+ },
+ "Next Step/7.jpg": {
+  "base": "assets/img/next-step/07",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#040404",
+   "#676767",
+   "#010101",
+   "#3f3f3f",
+   "#151515",
+   "#bebebe"
+  ]
+ },
+ "Next Step/2.jpg": {
+  "base": "assets/img/next-step/08",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#010101",
+   "#020202",
+   "#111111",
+   "#303030",
+   "#000000",
+   "#606060"
+  ]
+ },
+ "Next Step/9.jpg": {
+  "base": "assets/img/next-step/09",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#040404",
+   "#666666",
+   "#010101",
+   "#9f9f9f",
+   "#404040",
+   "#131313"
+  ]
+ },
+ "Next Step/3.jpg": {
+  "base": "assets/img/next-step/10",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#000000",
+   "#090909",
+   "#030303",
+   "#050505",
+   "#010101",
+   "#151515"
+  ]
+ },
+ "Next Step/5.jpg": {
+  "base": "assets/img/next-step/11",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#0e0726",
+   "#6d23ff",
+   "#5125f6",
+   "#dfd7f4",
+   "#0c0b0d",
+   "#3e199d"
+  ]
+ },
+ "Next Step/Isso Não é Rebranding/Slide 01.jpg": {
+  "base": "assets/img/next-step/12",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#010004",
+   "#5505d7",
+   "#250382",
+   "#e3d7ea",
+   "#7435cb",
+   "#20007d"
+  ]
+ },
+ "Next Step/Isso Não é Rebranding/Slide 02.jpg": {
+  "base": "assets/img/next-step/13",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#484748",
+   "#040417",
+   "#121134",
+   "#301f34",
+   "#c9c6c7",
+   "#676568"
+  ]
+ },
+ "Next Step/Isso Não é Rebranding/Slide 03.jpg": {
+  "base": "assets/img/next-step/14",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#000010",
+   "#000019",
+   "#6e6f84",
+   "#00000a",
+   "#000002",
+   "#0e0010"
+  ]
+ },
+ "Next Step/Isso Não é Rebranding/Slide 4.jpg": {
+  "base": "assets/img/next-step/15",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#000002",
+   "#00000a",
+   "#bcb9c7",
+   "#47119a",
+   "#020019",
+   "#000017"
+  ]
+ },
+ "Arquiteto Breno Lima/CARROSSEL - CONSTRUÇÃO MODULAR 01/CARROSSEL - CONSTRUÇÃO MODULAR 01.jpg": {
+  "base": "assets/img/breno-lima/01",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1632,
+   2037
+  ],
+  "colors": [
+   "#161715",
+   "#090a0a",
+   "#282925",
+   "#111111",
+   "#5f664c",
+   "#b2cf54"
+  ]
+ },
+ "Arquiteto Breno Lima/CARROSSEL - CONSTRUÇÃO MODULAR 01/CARROSSEL - CONSTRUÇÃO MODULAR 02.jpg": {
+  "base": "assets/img/breno-lima/02",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1620,
+   2025
+  ],
+  "colors": [
+   "#141414",
+   "#484a44",
+   "#141415",
+   "#111112",
+   "#131414",
+   "#141413"
+  ]
+ },
+ "Arquiteto Breno Lima/CARROSSEL - CONSTRUÇÃO MODULAR 01/CARROSSEL - CONSTRUÇÃO MODULAR 03.jpg": {
+  "base": "assets/img/breno-lima/03",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1620,
+   2025
+  ],
+  "colors": [
+   "#ededec",
+   "#999a94",
+   "#f3f2f2",
+   "#dddddc",
+   "#f1f0f0",
+   "#f6f6f6"
+  ]
+ },
+ "Arquiteto Breno Lima/CARROSSEL - CONSTRUÇÃO MODULAR 01/CARROSSEL - CONSTRUÇÃO MODULAR 5.jpg": {
+  "base": "assets/img/breno-lima/04",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1620,
+   2025
+  ],
+  "colors": [
+   "#405e36",
+   "#18220b",
+   "#f2f2f2",
+   "#32492c",
+   "#dfe8cd",
+   "#809279"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Tradicional ou Industrializado/Carrossel - 1 - 1 Tradicional ou Industrial.png": {
+  "base": "assets/img/breno-lima/05",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#a2a599",
+   "#040501",
+   "#1c2011",
+   "#0e1105",
+   "#595f47",
+   "#bdd07e"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Tradicional ou Industrializado/Carrossel - 1 - 2 Tradicional ou Industrial.png": {
+  "base": "assets/img/breno-lima/06",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#0a0704",
+   "#614e33",
+   "#7a6847",
+   "#2c2213",
+   "#4b3721",
+   "#9aa053"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Tradicional ou Industrializado/Carrossel - 1 - 3 Tradicional ou Industrial.png": {
+  "base": "assets/img/breno-lima/07",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#112001",
+   "#e9e8e7",
+   "#c4c8c4",
+   "#efeeed",
+   "#748374",
+   "#243313"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Tradicional ou Industrializado/Carrossel - 1 - 4 Tradicional ou Industrial.png": {
+  "base": "assets/img/breno-lima/08",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#353430",
+   "#d8e0e5",
+   "#cad6db",
+   "#788082",
+   "#e1e6e6",
+   "#a4a9a7"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Fundacao/Carrossel 2 - 1 Fundacao.png": {
+  "base": "assets/img/breno-lima/09",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#4d5132",
+   "#213010",
+   "#3c3c25",
+   "#191d0e",
+   "#8a7a5c",
+   "#cdc6a5"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Fundacao/Carrossel 2 - 2 Fundacao.png": {
+  "base": "assets/img/breno-lima/10",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#0a0707",
+   "#0d0a0a",
+   "#0b0809",
+   "#232220",
+   "#686b65",
+   "#070405"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Fundacao/Carrossel 2 - 3 Fundacao.png": {
+  "base": "assets/img/breno-lima/11",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#2b3514",
+   "#1f230c",
+   "#edede8",
+   "#7e6c57",
+   "#3a4525",
+   "#b6b6ae"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Fundacao/Carrossel 2 - 4 Fundacao.png": {
+  "base": "assets/img/breno-lima/12",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#575639",
+   "#131208",
+   "#656852",
+   "#4a4931",
+   "#3c3b21",
+   "#b5be93"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Alvenaria ou Steel Frame/Carrossel 3 - 1 Alvenaria ou Steel Frame.png": {
+  "base": "assets/img/breno-lima/13",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#322718",
+   "#6b553c",
+   "#89a1b5",
+   "#683812",
+   "#73797b",
+   "#b4cab0"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Alvenaria ou Steel Frame/Carrossel 3 - 2 Alvenaria ou Steel Frame.png": {
+  "base": "assets/img/breno-lima/14",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#9e9e9a",
+   "#e1e1dd",
+   "#e3e3df",
+   "#c8cac6",
+   "#e5e5e1",
+   "#d6d8d4"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Alvenaria ou Steel Frame/Carrossel 3 - 3 Alvenaria ou Steel Frame.png": {
+  "base": "assets/img/breno-lima/15",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#e2e2dd",
+   "#23340c",
+   "#26360f",
+   "#203109",
+   "#e7e7e3",
+   "#99a08e"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Alvenaria ou Steel Frame/Carrossel 3 - 4Alvenaria ou Steel Frame.png": {
+  "base": "assets/img/breno-lima/16",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#090807",
+   "#6d8ca7",
+   "#5b7895",
+   "#4a5866",
+   "#272a2d",
+   "#b5c7b2"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Por Onde Comeca/Carrossel 4 - 1 Por onde comeca.png": {
+  "base": "assets/img/breno-lima/17",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#a8bab1",
+   "#c2ccc6",
+   "#c8d5ce",
+   "#b5c1ba",
+   "#cfe2d8",
+   "#939e98"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Por Onde Comeca/Carrossel 4 - 3 Por onde comeca.jpg": {
+  "base": "assets/img/breno-lima/18",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1620,
+   2025
+  ],
+  "colors": [
+   "#d8d8d8",
+   "#dededf",
+   "#c8c8c7",
+   "#a3a59d",
+   "#d0d0d0",
+   "#e4e4e5"
+  ]
+ },
+ "Arquiteto Breno Lima/Maio - 2026/Carrossel Por Onde Comeca/Carrossel 4 - 4 Por onde comeca.png": {
+  "base": "assets/img/breno-lima/19",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#f1f1f0",
+   "#59594b",
+   "#f5f5f4",
+   "#c8c5b4",
+   "#e1e0db",
+   "#eaeddc"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Processo Simplificado (1)/CARROSSEL - PROCESSO SIMPLIFICADO 01.jpg": {
+  "base": "assets/img/breno-lima/20",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#3f74b4",
+   "#374242",
+   "#7698be",
+   "#97adbf",
+   "#697d92",
+   "#bdd88d"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Processo Simplificado (1)/CARROSSEL - PROCESSO SIMPLIFICADO 2.jpg": {
+  "base": "assets/img/breno-lima/21",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#0a0b0a",
+   "#f4f5ef",
+   "#dcff71",
+   "#2f302e",
+   "#c1c5b2"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Processo Simplificado (1)/CARROSSEL - PROCESSO SIMPLIFICADO 3.jpg": {
+  "base": "assets/img/breno-lima/22",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#bdbdbb",
+   "#eeefea",
+   "#fbfbfb",
+   "#feffff",
+   "#e6ff99"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Processo Simplificado (1)/CARROSSEL - PROCESSO SIMPLIFICADO 4.jpg": {
+  "base": "assets/img/breno-lima/23",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#d4d4d4",
+   "#ececec",
+   "#989898",
+   "#f8f8f8",
+   "#fdfdfd"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /1.jpg": {
+  "base": "assets/img/breno-lima/24",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#d9fa75",
+   "#ccf851",
+   "#d5fa6a",
+   "#d0f95a",
+   "#defb87",
+   "#8aa842"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /2.jpg": {
+  "base": "assets/img/breno-lima/25",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#454440",
+   "#7d766e",
+   "#9b938d",
+   "#ede2bd",
+   "#afa095",
+   "#c6beb7"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /3.jpg": {
+  "base": "assets/img/breno-lima/26",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#625451",
+   "#c7c9c4",
+   "#b5b3aa",
+   "#dae1dd",
+   "#969b96",
+   "#ddfbf6"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /4.jpg": {
+  "base": "assets/img/breno-lima/27",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#03060b",
+   "#323d34",
+   "#1a1618",
+   "#090c11",
+   "#c9daeb",
+   "#667773"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /5.jpg": {
+  "base": "assets/img/breno-lima/28",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#776a62",
+   "#57524c",
+   "#69594f",
+   "#483328",
+   "#d3d4d4",
+   "#a7a4a0"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /6.jpg": {
+  "base": "assets/img/breno-lima/29",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#443334",
+   "#a6a5a1",
+   "#7d7772",
+   "#bdbbb7",
+   "#b4b0ab",
+   "#d7dad8"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /7.jpg": {
+  "base": "assets/img/breno-lima/30",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#060707",
+   "#37302c",
+   "#7e7b75",
+   "#bec9c4",
+   "#e7eaea",
+   "#1d1a18"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /8.jpg": {
+  "base": "assets/img/breno-lima/31",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#1f1915",
+   "#bfb8af",
+   "#a1978b",
+   "#494037",
+   "#746152",
+   "#ded4c6"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /9.jpg": {
+  "base": "assets/img/breno-lima/32",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#b1a496",
+   "#483c33",
+   "#726a5e",
+   "#c9beb4",
+   "#958478",
+   "#e0dbd6"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /10.jpg": {
+  "base": "assets/img/breno-lima/33",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#131516",
+   "#3e4249",
+   "#616a74",
+   "#fafbfb",
+   "#88807f",
+   "#b1b3b4"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /11.jpg": {
+  "base": "assets/img/breno-lima/34",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#10171a",
+   "#94958a",
+   "#b4beb6",
+   "#6f6359",
+   "#523838",
+   "#dfd9d0"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - Calendario /12.jpg": {
+  "base": "assets/img/breno-lima/35",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#161011",
+   "#6e6260",
+   "#2a2e30",
+   "#523c35",
+   "#a7948d",
+   "#d9cfd1"
+  ]
+ },
+ "Dr Brenda/Frame 427321733.png": {
+  "base": "assets/img/brenda-seda/01",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#1b1017",
+   "#eff0f5",
+   "#f1f2f6",
+   "#ebecf1",
+   "#cfaead",
+   "#6b333e"
+  ]
+ },
+ "Dr Brenda/Estático 2.jpg": {
+  "base": "assets/img/brenda-seda/02",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#fff9ef",
+   "#fffdfa",
+   "#e69ba5",
+   "#fffeff",
+   "#feffff"
+  ]
+ },
+ "Dr Brenda/Frame 427321734.png": {
+  "base": "assets/img/brenda-seda/03",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#352b26",
+   "#2a221f",
+   "#0c0a0a",
+   "#c89f88",
+   "#5a4036",
+   "#3d2422"
+  ]
+ },
+ "Dr Brenda/Estático 1.jpg": {
+  "base": "assets/img/brenda-seda/04",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#30281e",
+   "#c27b5d",
+   "#9a7155",
+   "#ce8d6d",
+   "#6f4634",
+   "#e9b193"
+  ]
+ },
+ "Dr Brenda/Frame 427321732.png": {
+  "base": "assets/img/brenda-seda/05",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#312a25",
+   "#0c0a0a",
+   "#3e312a",
+   "#865e4b",
+   "#ddbba4",
+   "#3e2222"
+  ]
+ },
+ "Dr Brenda/Frame 427321735.png": {
+  "base": "assets/img/brenda-seda/06",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#150f0c",
+   "#4e4138",
+   "#0b0907",
+   "#3c2d26",
+   "#a69186",
+   "#1e1814"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Clínico/Estáticos/Azul Clínico - Estático 1.png": {
+  "base": "assets/img/kits-odonto/01",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#837c71",
+   "#d4d7d8",
+   "#c1c1be",
+   "#eaeced",
+   "#95afaa",
+   "#f8fafa"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Clínico/Estáticos/Azul Clínico - Estático 2.png": {
+  "base": "assets/img/kits-odonto/02",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#d7d6db",
+   "#524b3b",
+   "#b8b5b0",
+   "#c2e5e6",
+   "#54a99e",
+   "#f3f4f5"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Clínico/Estáticos/Azul Clínico - Estático 3.png": {
+  "base": "assets/img/kits-odonto/03",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#372b24",
+   "#caa995",
+   "#4d524b",
+   "#ad8471",
+   "#915740",
+   "#e6d7c3"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Clínico/Estáticos/Azul Clínico - Estático 4.png": {
+  "base": "assets/img/kits-odonto/04",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#329096",
+   "#7fb0be",
+   "#2e8f95",
+   "#bfd8de",
+   "#1b7377",
+   "#4598a0"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Clínico/Estáticos/Azul Clínico - Estático 5.png": {
+  "base": "assets/img/kits-odonto/05",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#713d20",
+   "#d6efee",
+   "#76deda",
+   "#d39152",
+   "#e6bc88",
+   "#95805c"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Claro/Carrossel/Azul Claro - Carrossel 1 - 1.png": {
+  "base": "assets/img/kits-odonto/06",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#203334",
+   "#5b6662",
+   "#e2e2e2",
+   "#679194",
+   "#a7a39d",
+   "#cdc8c6"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Claro/Carrossel/Azul Claro - Carrossel 1 - 2.png": {
+  "base": "assets/img/kits-odonto/07",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#b8d4d9",
+   "#247481",
+   "#e8f0f1",
+   "#9fbfc4",
+   "#feffff"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Claro/Carrossel/Azul Claro - Carrossel 1 - 3.png": {
+  "base": "assets/img/kits-odonto/08",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#016b7c",
+   "#077585",
+   "#1c93a0",
+   "#00687a",
+   "#006b7c",
+   "#036b7c"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Claro/Carrossel/Azul Claro - Carrossel 1 - 4.png": {
+  "base": "assets/img/kits-odonto/09",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#e1edef",
+   "#87a9ae",
+   "#e1ecee",
+   "#f2f7f7",
+   "#feffff"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Claro/Carrossel/Azul Claro - Carrossel 1 - 5.png": {
+  "base": "assets/img/kits-odonto/10",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#016b7c",
+   "#0d8f9d",
+   "#01697a",
+   "#016b7b",
+   "#036b7c",
+   "#006b7c"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Claro/Carrossel/Azul Claro - Carrossel 1 - 6.png": {
+  "base": "assets/img/kits-odonto/11",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#0d6d7c",
+   "#83abb2",
+   "#d8e8ea",
+   "#11393f",
+   "#feffff"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Claro/Estáticos/Azul Claro - Estático 1.png": {
+  "base": "assets/img/kits-odonto/12",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#7c5a3b",
+   "#3b2715",
+   "#737e6b",
+   "#ffffff",
+   "#624f39",
+   "#d6d7bf"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Claro/Estáticos/Azul Claro - Estático 2.png": {
+  "base": "assets/img/kits-odonto/13",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#03c9d4",
+   "#03777d",
+   "#9feaee",
+   "#03c9d3",
+   "#03cdd8",
+   "#02cad5"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Claro/Estáticos/Azul Claro - Estático 3.png": {
+  "base": "assets/img/kits-odonto/14",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#21221a",
+   "#52432f",
+   "#6b6151",
+   "#92684d",
+   "#95816c",
+   "#b8b6a4"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Rosa/Estáticos/Rosa - Estático 1.png": {
+  "base": "assets/img/kits-odonto/15",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#f8dcd9",
+   "#e1b9bb",
+   "#64474c",
+   "#fbe0dc",
+   "#f7dcd9",
+   "#f9dcd9"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Rosa/Estáticos/Rosa - Estático 2.png": {
+  "base": "assets/img/kits-odonto/16",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#e67a8e",
+   "#e2778b",
+   "#e77a8e",
+   "#945360",
+   "#f1a8b6",
+   "#e57a8e"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Rosa/Estáticos/Rosa - Estático 3.png": {
+  "base": "assets/img/kits-odonto/17",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#0d1b20",
+   "#b17b73",
+   "#714d3d",
+   "#c2b2b6",
+   "#34373a",
+   "#ededf0"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Rosa/Estáticos/Rosa - Estático 4.png": {
+  "base": "assets/img/kits-odonto/18",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#f8dcd9",
+   "#476974",
+   "#738c97",
+   "#b0b1b5",
+   "#e2dcd9",
+   "#f6e3e0"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Rosa/Estáticos/Rosa - Estático 5.png": {
+  "base": "assets/img/kits-odonto/19",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#2a190f",
+   "#a37c5f",
+   "#e7dacb",
+   "#fdfffc",
+   "#fffffe"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Rosa e Azul/Estáticos/Rosa e Azul - Estático 1.png": {
+  "base": "assets/img/kits-odonto/20",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#010809",
+   "#27cdd7",
+   "#e7ecec",
+   "#13383b",
+   "#4d9399"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Rosa e Azul/Estáticos/Rosa e Azul - Estático 2.png": {
+  "base": "assets/img/kits-odonto/21",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#e93b63",
+   "#e93b6a",
+   "#ea4370",
+   "#e93e67",
+   "#f1829d",
+   "#e83762"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Rosa e Azul/Estáticos/Rosa e Azul - Estático 3.png": {
+  "base": "assets/img/kits-odonto/22",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#63575c",
+   "#03c5d0",
+   "#00adb7",
+   "#01bdc7",
+   "#79cdd2",
+   "#34a3aa"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Rosa e Azul/Estáticos/Rosa e Azul - Estático 4.png": {
+  "base": "assets/img/kits-odonto/23",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#001213",
+   "#000f10",
+   "#000c0c",
+   "#a84d6a",
+   "#2b1d27",
+   "#0b1215"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Rosa e Azul/Estáticos/Rosa e Azul - Estático 5.png": {
+  "base": "assets/img/kits-odonto/24",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#0eb7c0",
+   "#3e1b0c",
+   "#b47a5a",
+   "#e4cdbf",
+   "#575b47",
+   "#3dafb4"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Vermelho/Carrossel/Vermelho - Carrossel 1 - 1.png": {
+  "base": "assets/img/kits-odonto/25",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#981211",
+   "#e2b5b5",
+   "#ac3938",
+   "#970f0e",
+   "#940908",
+   "#981210"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Vermelho/Carrossel/Vermelho - Carrossel 1 - 2.png": {
+  "base": "assets/img/kits-odonto/26",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#981211",
+   "#fefdfd",
+   "#ae4443",
+   "#970f0e",
+   "#940908",
+   "#e4c1c1"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Vermelho/Carrossel/Vermelho - Carrossel 1 - 3.png": {
+  "base": "assets/img/kits-odonto/27",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#960e0d",
+   "#dbacab",
+   "#f6ebeb",
+   "#b34f4f",
+   "#fffffe"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Vermelho/Carrossel/Vermelho - Carrossel 1 - 4.png": {
+  "base": "assets/img/kits-odonto/28",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#a93536",
+   "#f3e3e4",
+   "#bc6262",
+   "#a62d2e",
+   "#a83233",
+   "#a93537"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Vermelho/Carrossel/Vermelho - Carrossel 1 - 5.png": {
+  "base": "assets/img/kits-odonto/29",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#bf3f3f",
+   "#c94443",
+   "#c64342",
+   "#c34141",
+   "#a93434",
+   "#d56f6e"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Vermelho/Estáticos/Vermelho - Estático 1.png": {
+  "base": "assets/img/kits-odonto/30",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#981211",
+   "#a99d9d",
+   "#4b3030",
+   "#490b0a",
+   "#98100f",
+   "#9d1211"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Vermelho/Estáticos/Vermelho - Estático 2.png": {
+  "base": "assets/img/kits-odonto/31",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#997978",
+   "#c6b7b7",
+   "#422e2e",
+   "#f0ecec",
+   "#feffff"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Vermelho/Estáticos/Vermelho - Estático 3.png": {
+  "base": "assets/img/kits-odonto/32",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#8c5826",
+   "#372b09",
+   "#cbae90",
+   "#fffffe",
+   "#feffff"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul/Carrossel/Amarelo e Azul - Carrossel 1 - 1.png": {
+  "base": "assets/img/kits-odonto/33",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#030616",
+   "#12111a",
+   "#504851",
+   "#899193",
+   "#c6d2be",
+   "#630a12"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul/Carrossel/Amarelo e Azul - Carrossel 1 - 2.png": {
+  "base": "assets/img/kits-odonto/34",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#0051fd",
+   "#165ff9",
+   "#b6b16b",
+   "#004efe",
+   "#0151fd",
+   "#0051fe"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul/Carrossel/Amarelo e Azul - Carrossel 1 - 3.png": {
+  "base": "assets/img/kits-odonto/35",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#fcce07",
+   "#8d966f",
+   "#fbce07",
+   "#ffd103",
+   "#fdce06",
+   "#fdce07"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul/Carrossel/Amarelo e Azul - Carrossel 1 - 4.png": {
+  "base": "assets/img/kits-odonto/36",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#fcce07",
+   "#fce47a",
+   "#7e9089",
+   "#fdd004",
+   "#f8ce17",
+   "#fbce07"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul/Estáticos/Amarelo e Azul - Estático 1.png": {
+  "base": "assets/img/kits-odonto/37",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#003efd",
+   "#024efc",
+   "#0030fc",
+   "#f9d01a",
+   "#507ac2",
+   "#0b3ef7"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul/Estáticos/Amarelo e Azul - Estático 2.png": {
+  "base": "assets/img/kits-odonto/38",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#fccd03",
+   "#242424",
+   "#5a6370",
+   "#dedcd6",
+   "#bfb26e",
+   "#fecf01"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul/Estáticos/Amarelo e Azul - Estático 3.png": {
+  "base": "assets/img/kits-odonto/39",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#1554d9",
+   "#0251f9",
+   "#0852ee",
+   "#0f53e3",
+   "#9caebd",
+   "#0644c9"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul Royal/Carrossel/Amarelo e Azul Royal - Carrossel 1 - 1.png": {
+  "base": "assets/img/kits-odonto/40",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#426fec",
+   "#889ed2",
+   "#436fec",
+   "#3e6ced",
+   "#416fec",
+   "#426feb"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul Royal/Carrossel/Amarelo e Azul Royal - Carrossel 1 - 2.png": {
+  "base": "assets/img/kits-odonto/41",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#c0c1c2",
+   "#8c8f99",
+   "#dcdde0",
+   "#feffff",
+   "#fffffe"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul Royal/Carrossel/Amarelo e Azul Royal - Carrossel 1 - 3.png": {
+  "base": "assets/img/kits-odonto/42",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#fdd12a",
+   "#dbdad6",
+   "#a9a491",
+   "#fcd12a",
+   "#ffd32a",
+   "#ffd426"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul Royal/Carrossel/Amarelo e Azul Royal - Carrossel 1 - 4.png": {
+  "base": "assets/img/kits-odonto/43",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#0b1a3d",
+   "#9c9c9a",
+   "#0b1a3e",
+   "#191a1d",
+   "#0a1a3d",
+   "#091636"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul Royal/Carrossel/Amarelo e Azul Royal - Carrossel 1 - 5.png": {
+  "base": "assets/img/kits-odonto/44",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#426fec",
+   "#d2d3cc",
+   "#3f6be5",
+   "#426fe9",
+   "#416fed",
+   "#436fec"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul Royal/Estáticos/Amarelo e Azul Royal - Estático 1.png": {
+  "base": "assets/img/kits-odonto/45",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#3363e9",
+   "#426feb",
+   "#aaaea6",
+   "#3f6ce8",
+   "#1f3d8b",
+   "#6f6535"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul Royal/Estáticos/Amarelo e Azul Royal - Estático 2.png": {
+  "base": "assets/img/kits-odonto/46",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#7c5a3b",
+   "#3c2715",
+   "#847e88",
+   "#ffffff",
+   "#654f3c",
+   "#d9d6c1"
+  ]
+ },
+ "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Amarelo e Azul Royal/Estáticos/Amarelo e Azul Royal - Estático 3.png": {
+  "base": "assets/img/kits-odonto/47",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#626e89",
+   "#ddd8c1",
+   "#f8f5e9",
+   "#fffffd",
+   "#feffff"
+  ]
+ },
+ "COP Clínicas Odontológicas/Carrossel 1 - 1 Pinda.jpg": {
+  "base": "assets/img/cop/01",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#5651b2",
+   "#838fe8",
+   "#cdc7d0",
+   "#f5f5f7",
+   "#feffff"
+  ]
+ },
+ "COP Clínicas Odontológicas/Estático 1 - COP Morato.jpg": {
+  "base": "assets/img/cop/02",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#462a2a",
+   "#8e5341",
+   "#ca805e",
+   "#d1a48b",
+   "#a27966",
+   "#e3cec4"
+  ]
+ },
+ "COP Clínicas Odontológicas/Estático 3 - COP Pinda.jpg": {
+  "base": "assets/img/cop/03",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#3466fe",
+   "#2747ff",
+   "#2d56ff",
+   "#3a72fe",
+   "#8fadf9",
+   "#2848fc"
+  ]
+ },
+ "COP Clínicas Odontológicas/Estático 2 - COP Campo Limpo.jpg": {
+  "base": "assets/img/cop/04",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#2644fc",
+   "#2d55ff",
+   "#3465fe",
+   "#3972fe",
+   "#aabff6",
+   "#2f57f6"
+  ]
+ },
+ "COP Clínicas Odontológicas/Estático 4 - COP Morato.jpg": {
+  "base": "assets/img/cop/05",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#000f5c",
+   "#0944bc",
+   "#aec5f3",
+   "#011060",
+   "#000b58",
+   "#000f5b"
+  ]
+ },
+ "COP Clínicas Odontológicas/Estático 3 - COP Campo Limpo.jpg": {
+  "base": "assets/img/cop/06",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#010626",
+   "#717bc0",
+   "#000221",
+   "#000645",
+   "#010625",
+   "#000626"
+  ]
+ },
+ "COP Clínicas Odontológicas/Estático 3 - COP Morato.jpg": {
+  "base": "assets/img/cop/07",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#ffffff",
+   "#e8eaff",
+   "#6698f2",
+   "#e7e9ff",
+   "#f0f2ff",
+   "#feffff"
+  ]
+ },
+ "Raggaclubbersz/Hallowgrime/HallowGrime 1.jpg": {
+  "base": "assets/img/raggaclubberz/01",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#17131e",
+   "#2d1923",
+   "#5e5470",
+   "#fdf3eb",
+   "#b8122e",
+   "#aac5d7"
+  ]
+ },
+ "Raggaclubbersz/Cr1a Grime Festa Junina/Frame 6.jpg": {
+  "base": "assets/img/raggaclubberz/02",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#030302",
+   "#a49c8e",
+   "#837c71",
+   "#c2bcb2",
+   "#b4ada1",
+   "#272720"
+  ]
+ },
+ "Raggaclubbersz/Hallowgrime/HallowGrime Festa Fantasia.jpg": {
+  "base": "assets/img/raggaclubberz/03",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#07070d",
+   "#0b0d15",
+   "#3f0609",
+   "#221922",
+   "#54555e",
+   "#2c0e11"
+  ]
+ },
+ "Raggaclubbersz/Hallowgrime/Aviso Feed.jpg": {
+  "base": "assets/img/raggaclubberz/04",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1370
+  ],
+  "colors": [
+   "#06070d",
+   "#0e0f14",
+   "#471012",
+   "#807277",
+   "#402e34",
+   "#3c0609"
+  ]
+ }
+}
