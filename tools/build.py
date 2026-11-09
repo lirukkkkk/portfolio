@@ -8,7 +8,7 @@ from content import *  # noqa
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
 MAN = json.load(open(os.path.join(ROOT, "tools/manifest.json")))
-SITE_URL = ""  # ex.: https://alanveloso.github.io — preencha ao publicar
+SITE_URL = "https://lirukkkkk.github.io/portfolio"
 GA_ID = ""     # ex.: G-XXXXXXX
 I18N = {k: v["en"] for k, v in T.items()}
 BY = {c["slug"]: c for c in CASES}

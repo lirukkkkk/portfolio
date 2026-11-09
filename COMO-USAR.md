@@ -35,7 +35,19 @@ python3 tools/assets.py
 python3 tools/build.py
 ```
 
-## Antes de publicar
+## Publicar
 
-- Preencher `SITE_URL` e `GA_ID` (Google Analytics) no topo de `tools/build.py`.
+O site está em **https://lirukkkkk.github.io/portfolio/** (repositório github.com/lirukkkkk/portfolio).
+
+Depois de mudar qualquer coisa, rode:
+
+```bash
+cd "/Users/alanveloso/Documents/Portifolio Alan" && sh tools/publicar.sh "o que mudou"
+```
+
+Esse comando gera as páginas, salva no GitHub e atualiza o site em 1 a 2 minutos.
+
+## Pendências
+
+- Preencher `GA_ID` (Google Analytics) no topo de `tools/build.py`, se quiser medir as visitas.
 - O formulário de briefing não usa servidor: ele abre o WhatsApp ou o e-mail do visitante com a mensagem pronta. Por isso funciona no GitHub Pages sem nenhum custo.
