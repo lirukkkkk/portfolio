@@ -14,10 +14,21 @@
     themeBtn.addEventListener("click", () => {
       const current = root.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       const next = current === "dark" ? "light" : "dark";
-      root.dataset.theme = next;
-      store.set("theme", next);
-      const meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.content = next === "dark" ? "#121211" : "#f2f1ed";
+      const apply = () => {
+        root.dataset.theme = next;
+        store.set("theme", next);
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.content = next === "dark" ? "#121211" : "#f2f1ed";
+      };
+      if (!document.startViewTransition || reduce) return apply();
+      const r = themeBtn.getBoundingClientRect();
+      const x = r.left + r.width / 2, y = r.top + r.height / 2;
+      const end = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+      root.classList.add("theme-vt");
+      const vt = document.startViewTransition(apply);
+      vt.ready.then(() => root.animate({ clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + end + "px at " + x + "px " + y + "px)"] },
+        { duration: 520, easing: "cubic-bezier(0.77, 0, 0.175, 1)", pseudoElement: "::view-transition-new(root)" }));
+      vt.finished.finally(() => root.classList.remove("theme-vt"));
     });
   }
 
@@ -64,8 +75,11 @@
   }
 
   /* ---------- Reveal ---------- */
+  $$(".arch a").forEach((a, i) => { a.classList.add("rv"); a.style.setProperty("--d", (i % 4) * 70 + "ms"); });
+  $$(".group .g-grid .media, .group .g-wide .media").forEach((m, i) => { m.classList.add("rv", "rv-img"); m.style.setProperty("--d", (i % 3) * 70 + "ms"); });
+  if (location.search.includes("captura")) document.querySelectorAll("img[loading=lazy]").forEach((i) => { i.loading = "eager"; });
   const rv = $$(".rv");
-  if (rv.length && "IntersectionObserver" in window) {
+  if (rv.length && "IntersectionObserver" in window && !location.search.includes("captura")) {
     root.classList.add("js-rv");
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
@@ -204,48 +218,69 @@
     });
   });
 
-  /* ---------- Avatar: blink + look ---------- */
-  const avatars = $$(".avatar");
-  if (avatars.length) {
-    const state = avatars.map((a) => ({ el: a, pupils: $$(".pupil", a), x: 0, y: 0, tx: 0, ty: 0 }));
-    const blink = (a) => {
-      a.classList.add("is-blinking");
-      setTimeout(() => a.classList.remove("is-blinking"), 130);
+  /* ---------- Scroll progress ---------- */
+  const bar = document.createElement("div");
+  bar.className = "scroll-bar";
+  bar.setAttribute("aria-hidden", "true");
+  document.body.appendChild(bar);
+  const onProg = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = "scaleX(" + (max > 0 ? Math.min(1, scrollY / max) : 0) + ")";
+  };
+  addEventListener("scroll", () => requestAnimationFrame(onProg), { passive: true });
+  onProg();
+
+  /* ---------- Marquee: steady drift, drag to scrub ---------- */
+  $$("[data-marquee]").forEach((mq) => {
+    const track = mq.querySelector(".mq-track");
+    let x = 0, last = performance.now(), visible = true, vel = 0;
+    let down = false, px = 0, lastX = 0, lastT = 0;
+    const wrap = () => {
+      const half = track.scrollWidth / 2;
+      if (half <= 0) return;
+      while (x <= -half) x += half;
+      while (x > 0) x -= half;
     };
-    const loop = () => {
-      avatars.forEach((a) => { if (Math.random() < 0.85) blink(a); else { blink(a); setTimeout(() => blink(a), 220); } });
-      setTimeout(loop, 2600 + Math.random() * 3600);
-    };
-    if (!reduce) setTimeout(loop, 1800);
-    let target = null;
-    const aim = (px, py) => {
-      state.forEach((s) => {
-        const r = s.el.getBoundingClientRect();
-        if (!r.width) return;
-        const cx = r.left + r.width * 0.5, cy = r.top + r.height * 0.55;
-        const dx = px - cx, dy = py - cy;
-        const d = Math.hypot(dx, dy) || 1;
-        const k = Math.min(1, d / 260);
-        s.tx = (dx / d) * 8 * k; s.ty = (dy / d) * 4 * k;
-      });
-    };
-    if (finePointer) addEventListener("pointermove", (e) => aim(e.clientX, e.clientY), { passive: true });
-    // look at focused form field
-    document.addEventListener("focusin", (e) => {
-      if (!e.target.matches("input, select, textarea")) return;
-      target = e.target;
-      const r = target.getBoundingClientRect();
-      aim(r.left + Math.min(r.width, 120), r.top + r.height / 2);
+    new IntersectionObserver((en) => { visible = en[0].isIntersecting; }).observe(mq);
+    mq.addEventListener("pointerdown", (e) => {
+      down = true; px = lastX = e.clientX; lastT = performance.now(); vel = 0;
+      mq.setPointerCapture(e.pointerId); mq.classList.add("is-dragging");
     });
-    const tick = () => {
-      state.forEach((s) => {
-        s.x += (s.tx - s.x) * 0.12; s.y += (s.ty - s.y) * 0.12;
-        s.pupils.forEach((p) => p.setAttribute("transform", `translate(${s.x.toFixed(2)} ${s.y.toFixed(2)})`));
-      });
+    mq.addEventListener("pointermove", (e) => {
+      if (!down) return;
+      const now = performance.now(), dx = e.clientX - lastX;
+      x += dx * 1.6;
+      vel = (dx * 1.6) / Math.max(1, now - lastT);
+      lastX = e.clientX; lastT = now;
+      wrap(); track.style.transform = "translate3d(" + x + "px,0,0)";
+    });
+    const up = () => { down = false; mq.classList.remove("is-dragging"); };
+    mq.addEventListener("pointerup", up);
+    mq.addEventListener("pointercancel", up);
+    const tick = (now) => {
+      const dt = Math.min(64, now - last); last = now;
+      if (visible && !down) {
+        x += (reduce ? 0 : -0.04 * dt) + vel * dt;
+        vel *= 0.94;
+        if (Math.abs(vel) < 0.002) vel = 0;
+        wrap(); track.style.transform = "translate3d(" + x + "px,0,0)";
+      }
       requestAnimationFrame(tick);
     };
-    if (!reduce) requestAnimationFrame(tick);
-    avatars.forEach((a) => a.addEventListener("click", () => blink(a)));
+    requestAnimationFrame(tick);
+  });
+
+  /* ---------- Magnetic buttons ---------- */
+  if (finePointer && !reduce) {
+    $$(".btn").forEach((b) => {
+      b.classList.add("mag");
+      b.addEventListener("pointermove", (e) => {
+        const r = b.getBoundingClientRect();
+        const mx = (e.clientX - r.left - r.width / 2) * 0.22, my = (e.clientY - r.top - r.height / 2) * 0.3;
+        b.style.transform = "translate(" + Math.max(-8, Math.min(8, mx)) + "px, " + Math.max(-6, Math.min(6, my)) + "px)";
+      });
+      b.addEventListener("pointerleave", () => { b.style.transform = ""; });
+    });
   }
 
   /* ---------- Briefing form → WhatsApp / e-mail ---------- */
