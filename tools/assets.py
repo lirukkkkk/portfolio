@@ -13,10 +13,23 @@ def widths(w):
     return [480, 960] if w <= 1200 else [800, 1600]
 
 def export(src, slug, idx):
-    p = os.path.join(ROOT, SRC, src)
-    name = f"{idx:02d}"
+    if src.startswith("RENDER/"):
+        p = os.path.join(ROOT, "tools/_render", src[7:])
+    else:
+        p = os.path.join(ROOT, SRC, src)
+    name = hashlib.md5(src.encode()).hexdigest()[:10]
     d = os.path.join(OUT, slug); os.makedirs(d, exist_ok=True)
-    im = ImageOps.exif_transpose(Image.open(p)).convert("RGB")
+    im = ImageOps.exif_transpose(Image.open(p))
+    if im.mode in ("RGBA", "LA", "P"):
+        im = im.convert("RGBA")
+        a = im.getchannel("A")
+        if a.getextrema()[0] < 250:
+            lum = Image.composite(im.convert("L"), Image.new("L", im.size, 0), a)
+            bright = sum(lum.getdata()) / max(1, sum(1 for v in a.getdata() if v > 128)) > 150
+            bg = Image.new("RGBA", im.size, (24, 24, 23, 255) if bright else (242, 241, 237, 255))
+            im = Image.alpha_composite(bg, im)
+    im = im.convert("RGB")
+    im.info.pop("icc_profile", None)
     W, H = im.size
     ws = widths(W)
     for w in ws:

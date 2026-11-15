@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Gera o site estático em /site. Uso: python3 tools/build.py"""
-import os, sys, json, colorsys
+import os, sys, json, colorsys, re
 from html import escape as e
 sys.path.insert(0, os.path.dirname(__file__))
 from content import *  # noqa
@@ -11,6 +11,7 @@ MAN = json.load(open(os.path.join(ROOT, "tools/manifest.json")))
 SITE_URL = "https://lirukkkkk.github.io/portfolio"
 GA_ID = ""     # ex.: G-XXXXXXX
 I18N = {k: v["en"] for k, v in T.items()}
+CASES = sorted(CASES, key=lambda c: ORDER.index(c["slug"]))
 BY = {c["slug"]: c for c in CASES}
 
 ICON = {
@@ -60,7 +61,10 @@ def palette(kit_items):
     def rgb(c): return tuple(int(c[i:i + 2], 16) for i in (1, 3, 5))
     def hsv(c): return colorsys.rgb_to_hsv(*(v / 255 for v in rgb(c)))
     def dist(a, b): return sum((x - y) ** 2 for x, y in zip(rgb(a), rgb(b))) ** 0.5
-    vivid = sorted([c for c in score if hsv(c)[1] > 0.35 and hsv(c)[2] > 0.3], key=lambda c: -score[c] * (0.3 + hsv(c)[1]))
+    def skin(c):
+        h_, s_, v_ = hsv(c)
+        return 0.02 < h_ < 0.11 and s_ < 0.75   # tons de pele/madeira das fotos
+    vivid = sorted([c for c in score if hsv(c)[1] > 0.35 and hsv(c)[2] > 0.3 and not skin(c)], key=lambda c: -score[c] * (0.3 + hsv(c)[1]))
     picked = []
     for c in vivid:
         if all(dist(c, p) > 80 for p in picked):
@@ -79,22 +83,21 @@ def palette(kit_items):
     return picked[:3]
 
 
-AV = json.load(open(os.path.join(ROOT, "tools/avatar.json")))
+_SVG = open(os.path.join(ROOT, "Icons Alan/Stiker 3.svg"), encoding="utf-8").read()
+_PATHS = re.findall(r'<path d="([^"]+)"', _SVG)
+_FRECKLES = "".join(f'<path d="{d}"/>' for d in _PATHS[:-1])
+_FACE = _PATHS[-1]
 
 
 def avatar(uid, pre):
-    pupils = "".join(f'<circle class="pupil" cx="{e_["cx"]}" cy="{e_["cy"]}" r="{e_["r"]}"/>' for e_ in AV)
-    lids = ""
-    for e_ in AV:
-        x, y, w, h, st = e_["x"] - 6, e_["y"], e_["w"] + 12, e_["h"], e_["stroke"]
-        lids += (f'<g class="lidg" style="--h:{round(h * 0.78)}px"><rect x="{x}" y="{y - h - 12}" width="{w}" height="{h + 12}" fill="#f2f1ed"/>'
-                 f'<rect x="{x}" y="{y - st + 1}" width="{w}" height="{st - 2}" rx="{st/2}" fill="currentColor"/></g>')
-    return f'''<div class="avatar" role="img" aria-label="Autorretrato ilustrado de Alan Veloso">
-<div class="avatar-lines"></div>
-<svg viewBox="150 150 900 900" aria-hidden="true">
-<defs><mask id="em{uid}" maskUnits="userSpaceOnUse" x="150" y="150" width="900" height="900"><image href="{pre}assets/avatar/eyes-mask.png" x="150" y="150" width="900" height="900"/></mask></defs>
-<g mask="url(#em{uid})">{pupils}{lids}</g>
-</svg></div>'''
+    return f'''<div class="avatar" data-sticker role="img" aria-label="Autorretrato ilustrado de Alan Veloso">
+<svg viewBox="0 0 961 881" aria-hidden="true" fill="currentColor"><path class="face" d="{_FACE}"/><g class="frk">{_FRECKLES}</g></svg>
+</div>'''
+
+
+def ver(rel):
+    import hashlib
+    return hashlib.md5(open(os.path.join(SITE, rel), "rb").read()).hexdigest()[:8]
 
 
 def head(title, desc, pre, css, canonical=""):
@@ -102,7 +105,7 @@ def head(title, desc, pre, css, canonical=""):
     if GA_ID:
         ga = f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag("js",new Date());gtag("config","{GA_ID}");</script>'
     og = f"{SITE_URL}/assets/og.jpg" if SITE_URL else f"{pre}assets/og.jpg"
-    links = "".join(f'<link rel="stylesheet" href="{pre}assets/css/{c}.css">' for c in css)
+    links = "".join(f'<link rel="stylesheet" href="{pre}assets/css/{c}.css?v={ver("assets/css/" + c + ".css")}">' for c in css)
     return f'''<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -152,7 +155,7 @@ def footer(pre):
 <div class="lb-stage"><button class="icon-btn" type="button" data-lb-prev aria-label="{T["prev"]["pt"]}" data-i18n-attr="aria-label:prev">{ICON["l"]}</button><div class="lb-pic"></div><button class="icon-btn" type="button" data-lb-next aria-label="{T["next"]["pt"]}" data-i18n-attr="aria-label:next">{ICON["r"]}</button></div>
 </dialog>
 <script src="{pre}assets/js/i18n.js"></script>
-<script src="{pre}assets/js/site.js" defer></script>
+<script src="{pre}assets/js/site.js?v={ver("assets/js/site.js")}" defer></script>
 </body></html>'''
 
 
@@ -204,18 +207,20 @@ def sec_palettes(pre):
         cols = palette(g["items"])
         chips = "".join(f'<span style="background:{c}"></span>' for c in cols)
         I18N[f"kit.{g['slug']}"] = g["label"]["en"]
-        cards += (f'<a class="pal rv" href="{pre}trabalhos/kits-odonto.html#kit-{g["slug"]}"><div class="pal-chips">{chips}</div>'
+        cards += (f'<a class="pal rv" href="#kit-{g["slug"]}"><div class="pal-chips">{chips}</div>'
                   f'<div class="pal-name"><span data-i18n="kit.{g["slug"]}">{e(g["label"]["pt"])}</span><span>{len(g["items"]):02d}</span></div></a>')
-    return f'''<section class="sec" aria-labelledby="h-pal"><div class="wrap">
-<div class="sec-head"><h2 class="sec-title rv" id="h-pal">{tx("palettes.title", "span")}</h2><p class="sec-note rv">{tx("palettes.text", "span")}</p></div>
-<div class="pals">{cards}</div></div></section>'''
+    return f'''<section class="group pal-block" aria-labelledby="h-pal">
+<div class="group-head"><h2 id="h-pal">{tx("palettes.title", "span")}</h2><span>{tx("palettes.text", "span")}</span></div>
+<div class="pals">{cards}</div></section>'''
 
 
 # (case, índice da peça contando todas as imagens do case)
 ARCHIVE = [
-    ("next-step", 11), ("brenda-seda", 0), ("breno-lima", 0), ("kits-odonto", 9), ("raggaclubberz", 0), ("cop", 0),
-    ("next-step", 2), ("breno-lima", 23), ("kits-odonto", 24), ("brenda-seda", 3), ("raggaclubberz", 1), ("kits-odonto", 14),
-    ("breno-lima", 8), ("cop", 3), ("next-step", 13), ("kits-odonto", 39), ("brenda-seda", 5), ("breno-lima", 12), ("raggaclubberz", 2), ("kits-odonto", 0),
+    ("next-step", 11), ("terra-a-vista", 3), ("brenda-seda", 0), ("ilustracao", 0), ("breno-lima", 0), ("cr1a-grime", 0),
+    ("kits-odonto", 9), ("jennifer-perez", 0), ("ruido", 0), ("raggaclubberz", 0), ("sucateiro", 1), ("cop", 0),
+    ("ilustracao", 3), ("next-step", 2), ("cr1a-grime", 3), ("breno-lima", 23), ("terra-a-vista", 4), ("kits-odonto", 24),
+    ("dj-liru", 0), ("ruido", 2), ("brenda-seda", 3), ("jennifer-perez", 4), ("ilustracao", 1), ("cr1a-grime", 5),
+    ("breno-lima", 8), ("sucateiro", 3), ("kits-odonto", 39), ("ruido", 4),
 ]
 
 
@@ -279,6 +284,29 @@ def deliver_line(c):
 
 # ---------- Homes ----------
 
+def split_name():
+    out, k = "", 0
+    for word in ("Alan", "Veloso"):
+        chars = ""
+        for ch in word:
+            chars += f'<span class="ch" style="--i:{k}">{ch}</span>'
+            k += 1
+        out += f'<span class="ln" aria-hidden="true">{chars}</span>'
+    return out
+
+
+MQ = [("mq.0", "Social media", "Social media"), ("mq.1", "Branding", "Branding"), ("mq.2", "Flyers", "Flyers"), ("mq.3", "Capas de música", "Music covers"),
+      ("mq.4", "Identidade visual", "Visual identity"), ("mq.5", "Motion", "Motion"), ("mq.6", "Ilustração", "Illustration"), ("mq.7", "Carrosséis", "Carousels")]
+
+
+def marquee():
+    items = ""
+    for key, pt, en in MQ:
+        I18N[key] = en
+        items += f'<span data-i18n="{key}">{e(pt)}</span><i aria-hidden="true">✦</i>'
+    return f'<div class="mq" aria-hidden="true" data-marquee><div class="mq-track"><div class="mq-set">{items}</div><div class="mq-set">{items}</div></div></div>'
+
+
 def home_v2(pre):
     rows = ""
     prev_imgs = ""
@@ -292,15 +320,16 @@ def home_v2(pre):
     return f'''<main id="main">
 <section class="v2-hero"><div class="wrap">
 <p class="v2-role rv">{tx("role", "span")}<span class="avail">{tx("available")}</span></p>
-<h1 class="v2-name rv" style="--d:60ms">Alan<br>Veloso</h1>
+<h1 class="v2-name" aria-label="Alan Veloso">{split_name()}</h1>
 <div class="v2-row rv" style="--d:120ms"><p class="v2-tag">{tx("tagline", "span")}</p><div class="btn-row">{cta_whats()}</div></div>
 </div></section>
 {sec_about(pre)}
+{marquee()}
 <section class="sec v2-work" id="trabalhos" aria-labelledby="h-work"><div class="wrap">
 <div class="sec-head"><h2 class="sec-title rv" id="h-work">{tx("work.title", "span")}</h2><p class="sec-note rv">{tx("tagline.short", "span")}</p></div>
 <ol class="ix">{rows}</ol>
 </div><div class="ix-prev" data-preview aria-hidden="true">{prev_imgs}</div></section>
-{sec_services()}{sec_process()}{sec_palettes(pre)}{sec_archive(pre)}{sec_contact()}
+{sec_services()}{sec_process()}{sec_archive(pre)}{sec_contact()}
 </main>'''
 
 
@@ -350,6 +379,7 @@ def case_page(c, nxt):
 <h1 class="case-title rv" data-i18n="ct.{s}">{title}</h1>
 <dl class="case-meta rv"><div><dt>{tx("case.client")}</dt><dd>{client_name(c)}</dd></div><div><dt>{tx("case.segment")}</dt><dd>{seg_name(c["segment"])}</dd></div><div><dt>{tx("case.deliver")}</dt><dd>{deliver_line(c)}</dd></div></dl>
 <div class="case-intro rv"><div>{credit}</div><p data-i18n="ci.{s}">{intro}</p></div>
+{sec_palettes(pre) if s == "kits-odonto" else ""}
 </section>
 {cover}
 {groups}

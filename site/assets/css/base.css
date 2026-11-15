@@ -226,29 +226,27 @@ html { scrollbar-color: var(--line) transparent; }
 .about-copy p + p { margin-top: 1em; color: var(--ink-2); }
 @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
 
-/* Avatar */
-.avatar { position: relative; aspect-ratio: 1; width: 100%; color: var(--ink); }
-.avatar-lines {
-  position: absolute; inset: 0; background: currentColor;
-  -webkit-mask: url(../avatar/alan-lines.png) center / contain no-repeat;
-  mask: url(../avatar/alan-lines.png) center / contain no-repeat;
+/* Avatar: sticker floating */
+.avatar { position: relative; aspect-ratio: 961 / 881; width: 100%; color: var(--ink); }
+.avatar svg { width: 100%; height: 100%; overflow: visible; animation: float 7s ease-in-out infinite; transform-origin: 50% 60%; }
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-6px) rotate(-0.8deg); }
+  50% { transform: translateY(-2px) rotate(0.4deg); }
+  75% { transform: translateY(-7px) rotate(0.9deg); }
 }
-.avatar svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.avatar .pupil { fill: currentColor; }
-.avatar .lidg { transform: translateY(0); transition: transform 110ms var(--ease-out); }
-.avatar.is-blinking .lidg { transform: translateY(var(--h)); transition-duration: 70ms; }
+@media (prefers-reduced-motion: reduce) { .avatar svg { animation: none; } }
 
 /* Contact */
 .contact { padding-bottom: clamp(48px, 8vw, 96px); }
 .contact-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); }
-.contact-big { font-size: clamp(48px, 9vw, 140px); }
+.contact-big { font-size: clamp(36px, 6.75vw, 105px); }
 .contact-lede { margin-top: 20px; color: var(--ink-2); font-size: 18px; max-width: 34ch; }
 .contact-links { list-style: none; padding: 0; margin: 32px 0 0; border-top: 1px solid var(--line); }
 .contact-links li { border-bottom: 1px solid var(--line); }
 .contact-links a { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; text-decoration: none; font-size: 17px; }
 .contact-links a span:last-child { color: var(--mute); overflow-wrap: anywhere; text-align: right; }
 @media (hover: hover) and (pointer: fine) { .contact-links a:hover span:first-child { color: var(--accent); } }
-.contact .avatar { max-width: 220px; margin-top: 32px; }
 @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
 
 .form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 16px; align-content: start; }
@@ -361,7 +359,6 @@ html { scrollbar-color: var(--line) transparent; }
 }
 
 /* Avatar is a drawing on paper: same in both themes */
-.avatar { color: #141414; background: #f2f1ed; border-radius: var(--radius); }
 .case-intro .credit { font-size: 14px; line-height: 1.5; letter-spacing: 0; color: var(--mute); }
 
 /* Header: plans link on mobile */
@@ -405,3 +402,52 @@ html { scrollbar-color: var(--line) transparent; }
 .singles li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: clamp(18px, 1.6vw, 22px); letter-spacing: -0.01em; }
 .singles li > span:last-child { font-weight: 600; }
 .singles .mute { font-size: 15px; letter-spacing: 0; margin-left: 6px; }
+
+
+/* ---------- Motion layer ---------- */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: vtOut 200ms var(--ease-out) both; }
+::view-transition-new(root) { animation: vtIn 360ms var(--ease-out) both; }
+@keyframes vtOut { to { opacity: 0; transform: translateY(-8px); } }
+@keyframes vtIn { from { opacity: 0; transform: translateY(14px); } }
+.theme-vt::view-transition-old(root), .theme-vt::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+.scroll-bar { position: fixed; left: 0; top: 0; right: 0; height: 2px; background: var(--accent); transform-origin: left; transform: scaleX(0); z-index: 60; pointer-events: none; }
+
+/* Name: letters rise */
+.v2-name .ln { display: block; overflow: hidden; padding-bottom: 0.04em; margin-bottom: -0.04em; }
+.v2-name .ch { display: inline-block; transform: translateY(108%); animation: rise 1000ms var(--ease-out) forwards; animation-delay: calc(var(--i) * 45ms + 120ms); }
+@keyframes rise { to { transform: none; } }
+
+/* Section titles: wipe up */
+.js-rv .sec-title.rv { opacity: 1; transform: none; }
+.js-rv .sec-title.rv > span { display: inline-block; clip-path: inset(0 0 100% 0); transform: translateY(35%); transition: clip-path 900ms var(--ease-out), transform 900ms var(--ease-out); }
+.js-rv .sec-title.rv.in > span { clip-path: inset(-10% -5% -15% -5%); transform: none; }
+
+/* Images: reveal */
+.js-rv .arch a.rv, .js-rv .group .media.rv-img { opacity: 0; transform: translateY(18px) scale(0.985); transition: opacity 700ms var(--ease-out), transform 800ms var(--ease-out); transition-delay: var(--d, 0ms); }
+.js-rv .arch a.rv.in, .js-rv .group .media.rv-img.in { opacity: 1; transform: none; }
+
+/* Marquee */
+.mq { margin-top: clamp(72px, 10vw, 140px); border-block: 1px solid var(--line); overflow: hidden; padding: clamp(14px, 2vw, 24px) 0; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.mq.is-dragging { cursor: grabbing; }
+.mq-track { display: flex; width: max-content; will-change: transform; }
+.mq-set { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 36px); padding-right: clamp(18px, 2.4vw, 36px); font-size: clamp(30px, 5vw, 76px); font-weight: 500; letter-spacing: -0.035em; line-height: 1; white-space: nowrap; }
+.mq-set i { font-style: normal; font-size: 0.42em; color: var(--accent); }
+
+/* Buttons: magnetic */
+.btn.mag { transition: transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1), background-color 200ms ease, border-color 200ms ease, color 200ms ease; }
+
+/* Index rows: sweep */
+.ix a { position: relative; }
+.ix a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform 500ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .ix a:hover::after { transform: scaleX(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .v2-name .ch { animation: none; transform: none; }
+  .js-rv .sec-title.rv > span { clip-path: none; transform: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
+
+.pal-block .group-head span { font-variant-numeric: normal; }
+.pal-block { margin-top: clamp(48px, 7vw, 96px); }

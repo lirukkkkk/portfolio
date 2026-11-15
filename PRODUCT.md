@@ -36,7 +36,7 @@ Process: arrives at the briefing meeting already with references and a sketch �
 - Light and dark versions.
 - Contact: WhatsApp (primary), briefing form to e-mail (secondary), "available for new projects" badge.
 - No testimonials, no numbers section, no FAQ, no tools/software list.
-- Planos page (planos.html): 3 monthly plans (Básico R$200, Regular R$350, Premium R$700), comparison table and one-off prices, all from Proposta_Comercial_Alan.pdf. Never change values without the user.
+- Planos page (planos.html): 3 monthly plans (Básico R$300, Regular R$450, Premium R$800 — raised R$100 on 2026-11-15; discounts 17%/34%/44% vs one-off), comparison table and one-off prices, all from Proposta_Comercial_Alan.pdf. Never change values without the user.
 - Credit line for agency work: "Projeto desenvolvido na Next Step Agência".
 - Performance: AVIF/WebP responsive images, lazy galleries, Lighthouse 90+ mobile, OG share image, Google Analytics (ID to be provided).
 

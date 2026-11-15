@@ -10,3 +10,4 @@ Icon Alan.JPG
 .claude/
 __pycache__/
 .DS_Store
+tools/_render/

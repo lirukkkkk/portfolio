@@ -13,6 +13,7 @@ SEGMENTS = {
     "arquitetura": {"pt": "Arquitetura", "en": "Architecture"},
     "musica": {"pt": "Música e eventos", "en": "Music & events"},
     "marca": {"pt": "Marca", "en": "Brand"},
+    "ilustracao": {"pt": "Ilustração e capas", "en": "Illustration & covers"},
 }
 
 NS_CREDIT = {"pt": "Projeto desenvolvido na Next Step Agência", "en": "Project developed at Next Step Agência"}
@@ -143,10 +144,144 @@ CASES = [
         },
         "cover": "Raggaclubbersz/Hallowgrime/HallowGrime 1.jpg",
         "groups": [
-            {"kind": "grid", "label": {"pt": "Flyers e avisos", "en": "Flyers and notices"}, "items": seq("Raggaclubbersz", ["Hallowgrime/HallowGrime 1.jpg", "Cr1a Grime Festa Junina/Frame 6.jpg", "Hallowgrime/HallowGrime Festa Fantasia.jpg", "Hallowgrime/Aviso Feed.jpg"])},
+            {"kind": "grid", "label": {"pt": "Flyers e avisos", "en": "Flyers and notices"}, "items": seq("Raggaclubbersz", ["Hallowgrime/HallowGrime 1.jpg", "Hallowgrime/HallowGrime Festa Fantasia.jpg", "Hallowgrime/Aviso Feed.jpg", "Hallowgrime/Aviso Stories.jpg"])},
+        ],
+    },
+    {
+        "slug": "jennifer-perez",
+        "client": "Jennifer Perez · Nutricionista",
+        "client_en": "Jennifer Perez · Nutritionist",
+        "segment": "marca",
+        "featured": True,
+        "credit": None,
+        "title": {"pt": "Uma marca que cabe no consultório e no feed.", "en": "A brand that fits the office and the feed."},
+        "deliver": {"pt": ["Identidade visual", "Papelaria", "Aplicações"], "en": ["Visual identity", "Stationery", "Applications"]},
+        "intro": {
+            "pt": "Identidade para a nutricionista Jennifer Perez: um J dentro de uma fruta, desenhado para funcionar pequeno (no ícone do Instagram e no carimbo) e grande (no jaleco). Apresentei três opções de cor e levei a marca para cartão de visita, receituário, carimbo e uniforme.",
+            "en": "Identity for nutritionist Jennifer Perez: a J inside a fruit, drawn to work small (Instagram icon, stamp) and large (lab coat). I presented three color options and applied the brand to business cards, prescription pad, stamp and uniform.",
+        },
+        "cover": "NUTRICIONISTA JENNIFER/JENNI PERES NUTRICIONISTA.jpg",
+        "groups": [
+            {"kind": "grid", "label": {"pt": "Marca e aplicações", "en": "Brand and applications"}, "items": seq("NUTRICIONISTA JENNIFER", ["JENNI PERES NUTRICIONISTA.jpg", "ICON INSTAGRAM.jpg", "723FCAD0-A989-4676-84FA-89AD69238494.PNG"])},
+            {"kind": "wide", "label": {"pt": "Cores, papelaria e uniforme", "en": "Colors, stationery and uniform"}, "items": seq("NUTRICIONISTA JENNIFER", ["CORES OPCOES.jpg", "JENNIFER PEREZ CARTAO.jpg", "MOCKUP JALECO.jpg"]) + ["RENDER/jennifer-receituario.png", "RENDER/jennifer-carimbo.png"]},
+        ],
+    },
+    {
+        "slug": "terra-a-vista",
+        "client": "Terra à Vista",
+        "segment": "musica",
+        "featured": True,
+        "credit": None,
+        "title": {"pt": "Uma bandeira pirata para a cena.", "en": "A pirate flag for the scene."},
+        "deliver": {"pt": ["Logo e identidade", "Flyers e pôsteres", "Reels"], "en": ["Logo and identity", "Flyers and posters", "Reels"]},
+        "intro": {
+            "pt": "Terra à Vista é uma festa da cena de rap e grime de São Paulo. Desenhei a caveira pirata com luneta, o lettering e as versões da marca, e cuido dos flyers, pôsteres, avisos e do reels de aniversário com Aka AFK.",
+            "en": "Terra à Vista is a party from São Paulo's rap and grime scene. I drew the pirate skull with a spyglass, the lettering and the brand versions, and I handle flyers, posters, notices and the anniversary reels with Aka AFK.",
+        },
+        "cover": "TERRAAVISTA/LOGO/LOGO.jpg",
+        "groups": [
+            {"kind": "grid", "label": {"pt": "Marca", "en": "Brand"}, "items": seq("TERRAAVISTA/LOGO", ["LOGOPRETOCFUNDO.png", "LOGOBRANCOSFUNDO.png", "TerraAVistaRedondoB.png"])},
+            {"kind": "grid", "label": {"pt": "Pôsteres e flyers", "en": "Posters and flyers"}, "items": seq("TERRAAVISTA", ["TERRA A VISTA 01/POSTER.jpg", "TERRA A VISTA LAYBACK/POSTERLAYBACK01.jpg", "TAV AFK ANIV/FEED.jpg", "TERRA A VISTA 01/FLYER STORIES PRETO.jpg", "TERRA A VISTA 01/FLYER STORIES BRANCO.jpg", "TAV AFK ANIV/AVISOLISTA.png"])},
+            {"kind": "wide", "label": {"pt": "Banner e line-up", "en": "Banner and line-up"}, "items": seq("TERRAAVISTA", ["TAV AFK ANIV/SYMPLA_TAVAFK.jpg", "VENENOAVISTA.jpg", "TAV AFK ANIV/AVISOS!.png"])},
+            {"kind": "video", "label": {"pt": "Reels de aniversário", "en": "Anniversary reels"}, "items": ["terra-reels"]},
+        ],
+    },
+    {
+        "slug": "cr1a-grime",
+        "client": "Cr1a Grime",
+        "segment": "musica",
+        "featured": True,
+        "credit": None,
+        "title": {"pt": "Cada edição com uma cara nova.", "en": "Every edition with a new face."},
+        "deliver": {"pt": ["Flyers", "Stories", "Logo de edição"], "en": ["Flyers", "Stories", "Edition logo"]},
+        "intro": {
+            "pt": "Cr1a Grime é uma festa de grime na Bela Vista, em São Paulo. A cada edição a arte muda de linguagem (festa junina, aniversário de 1 ano, Carnagrime) sem perder o nome forte e a lista de atrações legível.",
+            "en": "Cr1a Grime is a grime party in Bela Vista, São Paulo. Each edition changes its visual language (June festival, first anniversary, Carnagrime) while keeping the name strong and the line-up readable.",
+        },
+        "cover": "CR1A/VERMELHO.jpg",
+        "groups": [
+            {"kind": "grid", "label": {"pt": "Edições", "en": "Editions"}, "items": seq("CR1A", ["VERMELHO.jpg", "P&B.jpg", "VERMELHO STORIES.jpg", "CarnaGrimeInsta.jpg", "cr1a9.jpg", "Cr1a Grime 18/Frame 6.jpg"])},
+            {"kind": "wide", "label": {"pt": "Banner", "en": "Banner"}, "items": seq("CR1A", ["Cr1a Grime 18/Frame 7.jpg"])},
+        ],
+    },
+    {
+        "slug": "sucateiro",
+        "client": "DJ Sucateiro",
+        "segment": "musica",
+        "featured": False,
+        "credit": None,
+        "title": {"pt": "Logo e agenda de um DJ da cena.", "en": "Logo and gig calendar for a scene DJ."},
+        "deliver": {"pt": ["Logo", "Agendas mensais", "Flyers"], "en": ["Logo", "Monthly gig calendars", "Flyers"]},
+        "intro": {
+            "pt": "Para o DJ Sucateiro fiz o logo em lettering agressivo, as agendas do mês com as datas e casas, e flyers de festas como o Bota Fora UNIP. O mesmo logo segura todas as peças, das fotos escuras às capas coloridas.",
+            "en": "For DJ Sucateiro I made the aggressive lettering logo, the monthly gig calendars and flyers for parties like Bota Fora UNIP. The same logo holds every piece, from dark photos to colorful covers.",
+        },
+        "cover": "AGENDA SUCATEIRO/AGENDAS/AGENDA JUNHO.jpg",
+        "groups": [
+            {"kind": "wide", "label": {"pt": "Logo", "en": "Logo"}, "items": seq("AGENDA SUCATEIRO/LOGOS SUCATEIRO", ["sucateiro.png"])},
+            {"kind": "grid", "label": {"pt": "Agendas e flyers", "en": "Calendars and flyers"}, "items": seq("AGENDA SUCATEIRO", ["AGENDAS/AGENDA JUNHO.jpg", "AGENDAS/AGENDA SUCATEIRO MARCO ABRIL.jpg", "AGENDAS/agendasucateiro01.jpg", "ATLETICA/FEED.jpg", "ATLETICA/Prancheta 2.jpg", "CAPA SET/Prancheta 1.jpg"])},
+        ],
+    },
+    {
+        "slug": "ruido",
+        "client": "Ruído",
+        "segment": "musica",
+        "featured": False,
+        "credit": None,
+        "title": {"pt": "Uma festa, cinco cartazes, nenhum igual.", "en": "One party, five posters, none alike."},
+        "deliver": {"pt": ["Logo", "Pôsteres"], "en": ["Logo", "Posters"]},
+        "intro": {
+            "pt": "Ruído é uma festa no Cerca Trova Pub, em Tatuí. O logo é simples e elegante; os cartazes mudam tudo a cada edição (ilustração, foto, op-art), e o nome da festa é o único elemento fixo.",
+            "en": "Ruído is a party at Cerca Trova Pub in Tatuí. The logo is simple and elegant; the posters change everything each edition (illustration, photo, op-art), with the party name as the only fixed element.",
+        },
+        "cover": "RUÍDO /RUIDO04FINAL.jpg",
+        "groups": [
+            {"kind": "grid", "label": {"pt": "Pôsteres", "en": "Posters"}, "items": seq("RUÍDO ", ["RUIDO FINAL 2.jpg", "RUIDO04.jpg", "RUIDO04FINAL.jpg", "RUIDO06 FINAL.jpg", "RUIDO5FINAL.jpg", "RUIDO LOGO.png"])},
+        ],
+    },
+    {
+        "slug": "ilustracao",
+        "client": "Ilustração e capas",
+        "client_en": "Illustration and covers",
+        "segment": "ilustracao",
+        "featured": True,
+        "credit": None,
+        "title": {"pt": "Personagens, capas e logos desenhados à mão.", "en": "Characters, covers and logos drawn by hand."},
+        "deliver": {"pt": ["Ilustração", "Capas de música", "Logos"], "en": ["Illustration", "Music covers", "Logos"]},
+        "intro": {
+            "pt": "Trabalhos autorais para artistas da cena: a capa de Rainha da Dança e o personagem do Cassiel, o avatar e o logo do Little Aug, o logo Sintonia Vibes, a cena Aluka para o Nill e a capa animada de Cavalona Toma.",
+            "en": "Authorial work for artists in the scene: the Rainha da Dança cover and Cassiel's character, Little Aug's avatar and logo, the Sintonia Vibes logo, the Aluka scene for Nill and the animated Cavalona Toma cover.",
+        },
+        "cover": "CASSIEL/RAINHADADANCAFINAL.jpg",
+        "groups": [
+            {"kind": "grid", "label": {"pt": "Capas e personagens", "en": "Covers and characters"}, "items": seq("CASSIEL", ["RAINHADADANCAFINAL.jpg", "RainhaDaDança02.jpg", "CASSIEL C LETTERING.jpg"]) + seq("AUG ICON", ["AUGPNGcNOME.png", "LittleAug.png", "SintoniaVibes.png"])},
+            {"kind": "wide", "label": {"pt": "Aluka · Nill", "en": "Aluka · Nill"}, "items": seq("ART NILL", ["NILL ART JPEG MAXIMO.jpg"])},
+            {"kind": "video", "label": {"pt": "Capa animada · Cavalona Toma", "en": "Animated cover · Cavalona Toma"}, "items": ["cavalona-loop"]},
+        ],
+    },
+    {
+        "slug": "dj-liru",
+        "client": "DJ Liru",
+        "segment": "ilustracao",
+        "featured": False,
+        "credit": None,
+        "title": {"pt": "Meu projeto de DJ, com a mesma régua dos clientes.", "en": "My own DJ project, held to the same standard."},
+        "deliver": {"pt": ["Capas de set", "Banners", "Thumbnails"], "en": ["Set covers", "Banners", "Thumbnails"]},
+        "intro": {
+            "pt": "DJ Liru é o meu projeto como DJ. Cada set ganha capa própria (Jungle Massive, Real Garage Boy, Grill Romantiku), além dos banners de YouTube e SoundCloud e das thumbnails.",
+            "en": "DJ Liru is my own DJ project. Each set gets its own cover (Jungle Massive, Real Garage Boy, Grill Romantiku), plus YouTube and SoundCloud banners and thumbnails.",
+        },
+        "cover": "DJ LIRU/JungleMassive.jpg",
+        "groups": [
+            {"kind": "grid", "label": {"pt": "Capas de set", "en": "Set covers"}, "items": seq("DJ LIRU", ["JungleMassive.jpg", "REALGARAGEBOYCAPA.jpg", "romantikuSET.jpg"])},
+            {"kind": "wide", "label": {"pt": "Banners e thumbnails", "en": "Banners and thumbnails"}, "items": seq("DJ LIRU", ["yt.jpg", "sossthumb.png", "SOUNDCLOUD.jpg"])},
         ],
     },
 ]
+
+# Ordem da lista de trabalhos na home
+ORDER = ["next-step", "breno-lima", "brenda-seda", "kits-odonto", "jennifer-perez", "terra-a-vista", "cr1a-grime", "ilustracao", "sucateiro", "ruido", "raggaclubberz", "cop", "dj-liru"]
+
 
 SERVICES = [
     ({"pt": "Social media mensal", "en": "Monthly social media"},
@@ -185,13 +320,13 @@ SINGLES = [
 
 # entregas por plano: estáticos, carrosséis, reels, stories, identidade (1º mês)
 PLANS = [
-    {"key": "basico", "name": {"pt": "Básico", "en": "Basic"}, "price": 200, "single": 360, "off": 45,
+    {"key": "basico", "name": {"pt": "Básico", "en": "Basic"}, "price": 300, "single": 360, "off": 17,
      "for": {"pt": "Para começar com presença no feed.", "en": "To start building a presence on the feed."},
      "items": {"static": 3, "carousel": 1, "reels": 0, "stories": 0, "identity": False}},
-    {"key": "regular", "name": {"pt": "Regular", "en": "Regular"}, "price": 350, "single": 680, "off": 50,
+    {"key": "regular", "name": {"pt": "Regular", "en": "Regular"}, "price": 450, "single": 680, "off": 34,
      "for": {"pt": "Presença consistente com baixo investimento.", "en": "Consistent presence on a small budget."},
      "items": {"static": 4, "carousel": 2, "reels": 0, "stories": 5, "identity": False}},
-    {"key": "premium", "name": {"pt": "Premium", "en": "Premium"}, "price": 700, "single": 1430, "off": 50,
+    {"key": "premium", "name": {"pt": "Premium", "en": "Premium"}, "price": 800, "single": 1430, "off": 44,
      "for": {"pt": "Crescimento acelerado e posicionamento de marca.", "en": "Faster growth and brand positioning."},
      "items": {"static": 4, "carousel": 2, "reels": 1, "stories": 5, "identity": True}},
 ]
@@ -245,9 +380,9 @@ T = {
     "archive.title": {"pt": "Arquivo", "en": "Archive"},
     "archive.all": {"pt": "Tudo", "en": "All"},
     "palettes.title": {"pt": "Sete paletas, uma pauta", "en": "Seven palettes, one plan"},
-    "palettes.text": {"pt": "Kits de criativos para clínicas odontológicas, organizados por cor. Toque numa paleta para ver as peças.", "en": "Creative kits for dental clinics, organized by color. Tap a palette to see the pieces."},
+    "palettes.text": {"pt": "Toque numa paleta para ir direto às peças.", "en": "Tap a palette to jump to its pieces."},
     "services.title": {"pt": "O que eu faço", "en": "What I do"},
-    "services.note": {"pt": "Planos mensais a partir de R$ 200, ou peças avulsas.", "en": "Monthly plans from R$ 200, or one-off pieces."},
+    "services.note": {"pt": "Planos mensais a partir de R$ 300, ou peças avulsas.", "en": "Monthly plans from R$ 300, or one-off pieces."},
     "process.title": {"pt": "Como trabalho", "en": "How I work"},
     "about.title": {"pt": "Sobre", "en": "About"},
     "about.p1": {"pt": "Sou Alan Veloso, designer e ilustrador em São Paulo. Há 7 anos desenho para marcas que precisam aparecer bem nas redes, de clínicas e escritórios de arquitetura a selos de música e festas.", "en": "I'm Alan Veloso, a designer and illustrator in São Paulo. For 7 years I've designed for brands that need to look right on social media, from clinics and architecture studios to music labels and parties."},
