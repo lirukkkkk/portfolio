@@ -527,43 +527,64 @@ def brl(v):
     return "R$ " + f"{v:,}".replace(",", ".")
 
 
+def price_txt(key, v):
+    if isinstance(v, dict):
+        return f'<span data-i18n="{key}">{lt(key, v)}</span>'
+    return f'<span>{brl(v)}</span>'
+
+
 def plans_page():
+    from urllib.parse import quote
     pre = ""
+    # formas de contratar
+    modes = ""
+    for k, name, desc in MODES:
+        modes += (f'<a class="mode-card rv" href="#{k}"><strong data-i18n="md.{k}">{lt(f"md.{k}", name)}</strong>'
+                  f'<span data-i18n="md.d.{k}">{lt(f"md.d.{k}", desc)}</span>{ICON["arr"]}</a>')
+    # planos
     cols = ""
+    labels = [("static", "pl.static1", "pl.static"), ("carousel", "pl.carousel1", "pl.carousel"), ("stories", "pl.stories", "pl.stories"),
+              ("reels", "pl.reels1", "pl.reels1"), ("ads", "pl.ads", "pl.ads")]
     for p_ in PLANS:
-        k = p_["key"]; it = p_["items"]
+        k = p_["key"]; g = p_["grid"]
         I18N[f"plan.{k}"] = p_["name"]["en"]; I18N[f"plan.for.{k}"] = p_["for"]["en"]
         li = ""
-        if it["identity"]:
-            li += f'<li><strong>{tx("pl.identity")}</strong> <span class="mute">{tx("pl.identity.when")}</span></li>'
-        for key, one, many in (("static", "pl.static1", "pl.static"), ("carousel", "pl.carousel1", "pl.carousel"), ("reels", "pl.reels1", "pl.reels1"), ("stories", "pl.stories", "pl.stories")):
-            n = it[key]
+        for key, one, many in labels:
+            n = g[key]
             if n:
                 li += f'<li><strong class="tnum">{n}</strong> {tx(one if n == 1 else many)}</li>'
-        from urllib.parse import quote
+        if g["plan"]:
+            li += f'<li><strong>{tx("pl.planning")}</strong></li>'
         wa = f"https://wa.me/{WHATSAPP}?text=" + quote(f"Oi, Alan! Tenho interesse no plano {p_['name']['pt']} ({brl(p_['price'])}/mês).")
         cols += f'''<article class="plan rv">
-<h2 class="plan-name" data-i18n="plan.{k}">{e(p_["name"]["pt"])}</h2>
+<h3 class="plan-name" data-i18n="plan.{k}">{e(p_["name"]["pt"])}</h3>
 <p class="plan-price"><span class="tnum">{brl(p_["price"])}</span><small>{tx("plans.month")}</small></p>
 <p class="plan-for" data-i18n="plan.for.{k}">{e(p_["for"]["pt"])}</p>
 <ul class="plan-list">{li}</ul>
 <p class="plan-save"><span>{tx("plans.single")} <s class="tnum">{brl(p_["single"])}</s></span><span class="plan-off tnum">{p_["off"]}% {tx("plans.off")}</span></p>
 <a class="btn" href="{wa}" target="_blank" rel="noopener">{ICON["wa"]}{tx("plans.cta")}</a>
 </article>'''
-    heads = ["pl.plan", "pl.h.static", "pl.h.carousel", "pl.h.reels", "pl.h.stories", "pl.h.identity", "pl.h.single", "pl.h.off", "pl.h.month"]
+    rules = "".join(f'<li data-i18n="rule.{i}">{lt(f"rule.{i}", r)}</li>' for i, r in enumerate(PLAN_RULES))
+    heads = ["pl.plan", "pl.h.static", "pl.h.carousel", "pl.h.stories", "pl.h.reels", "pl.h.ads", "pl.h.plan", "pl.h.single", "pl.h.off", "pl.h.month"]
     th = "".join(f'<th scope="col">{tx(h)}</th>' for h in heads)
     rows = ""
+    dash = '<span class="mute">—</span>'
     for p_ in PLANS:
-        it = p_["items"]; dash = '<span class="mute">—</span>'
+        g = p_["grid"]
         cell = lambda n: f'<td class="tnum">{n}</td>' if n else f"<td>{dash}</td>"
-        ident = f'<td>{tx("pl.firstmonth")}</td>' if it["identity"] else f"<td>{dash}</td>"
-        rows += (f'<tr><th scope="row" data-i18n="plan.{p_["key"]}">{e(p_["name"]["pt"])}</th>{cell(it["static"])}{cell(it["carousel"])}{cell(it["reels"])}{cell(it["stories"])}{ident}'
-                 f'<td class="tnum mute">{brl(p_["single"])}</td><td class="tnum">{p_["off"]}%</td><td class="tnum"><strong>{brl(p_["price"])}</strong></td></tr>')
-    singles = ""
-    for i, (name, note, price) in enumerate(SINGLES):
-        n = lt(f"sg.{i}", name)
-        nt = f' <span class="mute" data-i18n="sg.n{i}">{lt(f"sg.n{i}", note)}</span>' if note else ""
-        singles += f'<li><span><span data-i18n="sg.{i}">{n}</span>{nt}</span><span class="tnum">{brl(price)}</span></li>'
+        rows += (f'<tr><th scope="row" data-i18n="plan.{p_["key"]}">{e(p_["name"]["pt"])}</th>{cell(g["static"])}{cell(g["carousel"])}{cell(g["stories"])}{cell(g["reels"])}{cell(g["ads"])}'
+                 f'<td>{tx("pl.yes") if g["plan"] else dash}</td><td class="tnum mute">{brl(p_["single"])}</td><td class="tnum">{p_["off"]}%</td><td class="tnum"><strong>{brl(p_["price"])}</strong></td></tr>')
+    # tabela avulsa
+    cat = ""
+    for gi, (gname, items) in enumerate(CATALOG):
+        lis = ""
+        for ii, (name, note, price) in enumerate(items):
+            key = f"ct.{gi}.{ii}"
+            pid = "projetos" if gi == len(CATALOG) - 1 and ii == 0 else ""
+            lis += (f'<li><span><span data-i18n="{key}">{lt(key, name)}</span><span class="mute" data-i18n="{key}.n">{lt(key + ".n", note)}</span></span>'
+                    f'<span class="tnum">{price_txt(key + ".p", price)}</span></li>')
+        gid = ' id="projetos"' if gi == len(CATALOG) - 1 else ""
+        cat += f'<div class="cat-group"{gid}><h3 data-i18n="cg.{gi}">{lt(f"cg.{gi}", gname)}</h3><ul class="singles">{lis}</ul></div>'
     body = f'''<body>
 {header(pre, "./")}
 <main id="main"><div class="wrap">
@@ -571,17 +592,22 @@ def plans_page():
 <h1 class="case-title rv">{tx("plans.title", "span")}</h1>
 <p class="plans-lede rv">{tx("plans.lede", "span")}</p>
 </section>
+<nav class="modes" aria-label="{T["plans.how"]["pt"]}">{modes}</nav>
+
+<section class="group rv" id="planos" aria-labelledby="h-pl"><div class="group-head"><h2 id="h-pl">{tx("plans.monthly", "span")}</h2><span>{tx("plans.monthly.note", "span")}</span></div>
 <div class="plans">{cols}</div>
-<section class="group rv" aria-labelledby="h-cmp"><div class="group-head"><h2 id="h-cmp">{tx("plans.compare", "span")}</h2></div>
+<div class="rules"><h3>{tx("plans.rules", "span")}</h3><ul>{rules}</ul></div>
 <div class="table-wrap" tabindex="0"><table class="cmp"><thead><tr>{th}</tr></thead><tbody>{rows}</tbody></table></div>
 <p class="plans-foot">{tx("plans.foot", "span")}</p></section>
-<section class="group rv" aria-labelledby="h-sg"><div class="group-head"><h2 id="h-sg">{tx("plans.singles", "span")}</h2><span>{tx("plans.singles.note", "span")}</span></div>
-<ul class="singles">{singles}</ul></section>
+
+<section class="group rv" id="avulso" aria-labelledby="h-sg"><div class="group-head"><h2 id="h-sg">{tx("plans.singles", "span")}</h2><span>{tx("plans.singles.note", "span")}</span></div>
+{cat}</section>
+
 <div class="case-cta rv"><p>{tx("plans.custom", "span")}</p><div class="btn-row"><a class="btn" href="./#contato">{tx("plans.custom.cta")}{ICON["arr"]}</a></div></div>
 </div></main>
 <div style="height:clamp(56px,8vw,112px)"></div>
 {footer(pre)}'''
-    return head("Planos e valores — Alan Veloso", "Planos mensais de social media e valores de peças avulsas: estático, carrossel, reels, stories e identidade visual.", pre, ["base"]) + body
+    return head("Planos e valores — Alan Veloso", "Planos mensais e tabela avulsa: social media, criativos para tráfego pago, peças gráficas, documentos e projetos de identidade visual.", pre, ["base"]) + body
 
 
 def write(path, html):

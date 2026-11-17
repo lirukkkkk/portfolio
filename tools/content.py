@@ -415,27 +415,73 @@ PROCESS = [
      {"pt": "Alinhamos os ajustes e entrego os arquivos prontos, em poucos dias úteis.", "en": "We align adjustments and I deliver the final files within a few business days."}),
 ]
 
-# Planos (da Proposta Comercial). Valores em R$.
-SINGLES = [
-    ({"pt": "Estático", "en": "Static post"}, None, 80),
-    ({"pt": "Carrossel", "en": "Carousel"}, {"pt": "3 a 6 lâminas", "en": "3 to 6 slides"}, 120),
-    ({"pt": "Reels", "en": "Reels"}, {"pt": "edição", "en": "editing"}, 150),
-    ({"pt": "Pack 5 stories", "en": "Pack of 5 stories"}, None, 120),
-    ({"pt": "Identidade visual", "en": "Visual identity"}, None, 600),
+# Preços (tabela 2026/27). Começa 30% abaixo do valor sugerido no relatório e mais 20% de redução e sobe a cada 6 meses.
+# Valor inteiro = R$; dict = texto livre (ex.: "a partir de").
+def _from(v):
+    return {"pt": f"a partir de R$ {v:,}".replace(",", "."), "en": f"from R$ {v:,}".replace(",", ".")}
+
+
+MODES = [
+    ("avulso", {"pt": "Peça avulsa", "en": "One-off piece"}, {"pt": "Para algo pontual. Preço da tabela, sem compromisso.", "en": "For a one-time need. Table price, no commitment."}),
+    ("planos", {"pt": "Plano mensal", "en": "Monthly plan"}, {"pt": "Para quem posta toda semana. Entregas fixas e o maior desconto.", "en": "For brands posting every week. Fixed deliverables and the biggest discount."}),
+    ("projetos", {"pt": "Projeto", "en": "Project"}, {"pt": "Identidade, papelaria, motion e eventos com orçamento fechado.", "en": "Identity, stationery, motion and events with a fixed quote."}),
 ]
 
-# entregas por plano: estáticos, carrosséis, reels, stories, identidade (1º mês)
-PLANS = [
-    {"key": "basico", "name": {"pt": "Básico", "en": "Basic"}, "price": 300, "single": 360, "off": 17,
-     "for": {"pt": "Para começar com presença no feed.", "en": "To start building a presence on the feed."},
-     "items": {"static": 3, "carousel": 1, "reels": 0, "stories": 0, "identity": False}},
-    {"key": "regular", "name": {"pt": "Regular", "en": "Regular"}, "price": 510, "single": 680, "off": 25,
-     "for": {"pt": "Presença consistente com baixo investimento.", "en": "Consistent presence on a small budget."},
-     "items": {"static": 4, "carousel": 2, "reels": 0, "stories": 5, "identity": False}},
-    {"key": "premium", "name": {"pt": "Premium", "en": "Premium"}, "price": 800, "single": 1430, "off": 44,
-     "for": {"pt": "Crescimento acelerado e posicionamento de marca.", "en": "Faster growth and brand positioning."},
-     "items": {"static": 4, "carousel": 2, "reels": 1, "stories": 5, "identity": True}},
+CATALOG = [
+    ({"pt": "Social media", "en": "Social media"}, [
+        ({"pt": "Post estático", "en": "Static post"}, {"pt": "1 arte no formato do feed", "en": "1 artwork in feed format"}, 70),
+        ({"pt": "Adaptação de formato", "en": "Format adaptation"}, {"pt": "Mesma arte em story, 1:1 ou 4:5", "en": "Same artwork as story, 1:1 or 4:5"}, 25),
+        ({"pt": "Carrossel", "en": "Carousel"}, {"pt": "Até 5 lâminas · lâmina extra R$ 25", "en": "Up to 5 slides · extra slide R$ 25"}, 135),
+        ({"pt": "Pack com 5 stories", "en": "Pack of 5 stories"}, {"pt": "Story avulso: R$ 30", "en": "Single story: R$ 30"}, 110),
+        ({"pt": "Reels", "en": "Reels"}, {"pt": "Edição até 60s com legendas", "en": "Editing up to 60s with captions"}, 140),
+        ({"pt": "Corte de podcast ou vídeo", "en": "Podcast or video clip"}, {"pt": "Até 60s · pack com 5 por R$ 280", "en": "Up to 60s · pack of 5 for R$ 280"}, 70),
+        ({"pt": "Thumbnail ou capa de episódio", "en": "Thumbnail or episode cover"}, {"pt": "YouTube, Spotify", "en": "YouTube, Spotify"}, 70),
+    ]),
+    ({"pt": "Tráfego pago", "en": "Paid ads"}, [
+        ({"pt": "Criativo estático", "en": "Static ad creative"}, {"pt": "1 ideia em 3 formatos (1:1, 4:5, 9:16)", "en": "1 idea in 3 formats (1:1, 4:5, 9:16)"}, 110),
+        ({"pt": "Variação de criativo", "en": "Creative variation"}, {"pt": "Nova headline, foto ou oferta", "en": "New headline, photo or offer"}, 40),
+        ({"pt": "Criativo em vídeo", "en": "Video ad creative"}, {"pt": "Até 30s", "en": "Up to 30s"}, 225),
+        ({"pt": "Campanha em sequência", "en": "Campaign sequence"}, {"pt": "4 criativos (educa, prova, oferta, última chamada) + 4 variações", "en": "4 creatives (educate, proof, offer, last call) + 4 variations"}, 475),
+    ]),
+    ({"pt": "Peças gráficas e documentos", "en": "Print and documents"}, [
+        ({"pt": "Flyer ou cartaz de evento", "en": "Event flyer or poster"}, {"pt": "Feed + story", "en": "Feed + story"}, 155),
+        ({"pt": "Banner", "en": "Banner"}, {"pt": "Site, Sympla ou impresso", "en": "Website, ticketing or print"}, 125),
+        ({"pt": "Cartão de visita", "en": "Business card"}, {"pt": "Frente e verso, arquivo para gráfica", "en": "Front and back, print-ready"}, 110),
+        ({"pt": "Papel timbrado ou assinatura de e-mail", "en": "Letterhead or e-mail signature"}, {"pt": "Cada um", "en": "Each"}, 85),
+        ({"pt": "Documento ou apresentação", "en": "Document or presentation"}, {"pt": "Com a identidade da empresa, mínimo de 6 páginas", "en": "With your brand identity, minimum 6 pages"}, {"pt": "R$ 40/página", "en": "R$ 40/page"}),
+        ({"pt": "Template editável", "en": "Editable template"}, {"pt": "Canva ou Figma, para reusar", "en": "Canva or Figma, reusable"}, {"pt": "+ R$ 140", "en": "+ R$ 140"}),
+        ({"pt": "Cardápio ou catálogo", "en": "Menu or catalog"}, {"pt": "Diagramação completa", "en": "Full layout"}, _from(340)),
+    ]),
+    ({"pt": "Projetos", "en": "Projects"}, [
+        ({"pt": "Logo", "en": "Logo"}, {"pt": "3 caminhos, 2 rodadas de ajuste", "en": "3 directions, 2 revision rounds"}, _from(680)),
+        ({"pt": "Identidade visual", "en": "Visual identity"}, {"pt": "Logo, paleta, tipografia, aplicações e mini manual", "en": "Logo, palette, typography, applications and mini guide"}, _from(1400)),
+        ({"pt": "Kit visual de podcast", "en": "Podcast visual kit"}, {"pt": "Identidade, capa, thumbnails, capas de corte e intro", "en": "Identity, cover, thumbnails, clip covers and intro"}, _from(1560)),
+        ({"pt": "Intro ou vinheta animada", "en": "Animated intro or sting"}, {"pt": "Motion da logo, até 10s", "en": "Logo motion, up to 10s"}, _from(450)),
+        ({"pt": "Vídeo de evento", "en": "Event video"}, {"pt": "Edição até 3 minutos", "en": "Editing up to 3 minutes"}, _from(340)),
+        ({"pt": "Capa de música ou single", "en": "Music or single cover"}, {"pt": "Com ilustração autoral", "en": "With original illustration"}, _from(280)),
+    ]),
 ]
+
+# entregas por mês (para os cards e o comparativo)
+PLANS = [
+    {"key": "essencial", "name": {"pt": "Essencial", "en": "Essential"}, "price": 450, "single": 525, "off": 14,
+     "for": {"pt": "Presença constante no feed com investimento enxuto.", "en": "Steady feed presence on a lean budget."},
+     "grid": {"static": 4, "carousel": 1, "stories": 5, "reels": 0, "ads": 0, "plan": False}},
+    {"key": "presenca", "name": {"pt": "Presença", "en": "Presence"}, "price": 840, "single": 1050, "off": 20,
+     "for": {"pt": "Feed, stories e vídeo para a marca aparecer toda semana.", "en": "Feed, stories and video so the brand shows up every week."},
+     "grid": {"static": 6, "carousel": 2, "stories": 10, "reels": 1, "ads": 0, "plan": False}},
+    {"key": "completo", "name": {"pt": "Completo", "en": "Complete"}, "price": 1510, "single": 1930, "off": 22,
+     "for": {"pt": "Conteúdo, vídeo e anúncios planejados juntos, mês a mês.", "en": "Content, video and ads planned together, month by month."},
+     "grid": {"static": 8, "carousel": 4, "stories": 15, "reels": 2, "ads": 2, "plan": True}},
+]
+
+PLAN_RULES = [
+    {"pt": "As entregas valem dentro do mês. O que não for usado não acumula (no máximo 1 peça passa para o mês seguinte).", "en": "Deliverables are used within the month. Unused pieces don't roll over (at most 1 piece carries to the next month)."},
+    {"pt": "Fidelidade mínima de 3 meses.", "en": "Minimum commitment of 3 months."},
+    {"pt": "Pagando 3 meses adiantados, mais 5% de desconto.", "en": "Pay 3 months upfront for an extra 5% off."},
+    {"pt": "Clientes de plano têm 15% de desconto em projetos e 10% em peças fora do plano.", "en": "Plan clients get 15% off projects and 10% off pieces outside the plan."},
+]
+
 
 # Textos de interface. data-i18n="chave"
 T = {
@@ -445,15 +491,15 @@ T = {
     "nav.contact": {"pt": "Contato", "en": "Contact"},
     "nav.plans": {"pt": "Planos", "en": "Plans"},
     "plans.title": {"pt": "Planos e valores", "en": "Plans and pricing"},
-    "plans.lede": {"pt": "Planos mensais para manter a marca presente e consistente, ou peças avulsas quando você precisar.", "en": "Monthly plans to keep your brand present and consistent, or one-off pieces whenever you need them."},
+    "plans.lede": {"pt": "Três formas de contratar. Escolha a que combina com o ritmo da sua marca.", "en": "Three ways to hire. Pick the one that fits your brand's pace."},
     "plans.month": {"pt": "/mês", "en": "/month"},
     "plans.single": {"pt": "Valor avulso", "en": "One-off value"},
     "plans.off": {"pt": "de economia", "en": "savings"},
     "plans.cta": {"pt": "Quero este plano", "en": "I want this plan"},
     "plans.compare": {"pt": "Comparativo", "en": "Comparison"},
-    "plans.singles": {"pt": "Serviços avulsos", "en": "One-off services"},
-    "plans.singles.note": {"pt": "Contratação individual, por demanda.", "en": "Hired individually, on demand."},
-    "plans.foot": {"pt": "Identidade visual inclusa no 1º mês do plano Premium. Desconto calculado sobre os valores avulsos.", "en": "Visual identity included in the first month of the Premium plan. Savings calculated on one-off prices."},
+    "plans.singles": {"pt": "Tabela avulsa", "en": "One-off price list"},
+    "plans.singles.note": {"pt": "Inclui 1 rodada de ajuste. Ajustes extras: R$ 35 por hora.", "en": "Includes 1 revision round. Extra revisions: R$ 35 per hour."},
+    "plans.foot": {"pt": "Desconto calculado sobre os valores da tabela avulsa.", "en": "Savings calculated on one-off table prices."},
     "plans.custom": {"pt": "Precisa de outro escopo, ou é uma agência buscando parceria? Monto um orçamento sob medida.", "en": "Need a different scope, or are you an agency looking for a partner? I'll put together a custom quote."},
     "plans.custom.cta": {"pt": "Pedir orçamento", "en": "Ask for a quote"},
     "plans.see": {"pt": "Ver planos e valores", "en": "See plans and pricing"},
@@ -475,6 +521,23 @@ T = {
     "pl.h.off": {"pt": "Desconto", "en": "Savings"},
     "pl.h.month": {"pt": "Valor/mês", "en": "Per month"},
     "pl.firstmonth": {"pt": "1º mês", "en": "Month 1"},
+    "pl.h.ads": {"pt": "Criativos de tráfego", "en": "Ad creatives"},
+    "pl.h.plan": {"pt": "Planejamento", "en": "Planning"},
+    "pl.ads": {"pt": "criativos de tráfego", "en": "ad creatives"},
+    "pl.planning": {"pt": "Planejamento do mês", "en": "Monthly content plan"},
+    "pl.yes": {"pt": "Sim", "en": "Yes"},
+    "plans.monthly": {"pt": "Planos mensais", "en": "Monthly plans"},
+    "plans.monthly.note": {"pt": "Para quem posta toda semana.", "en": "For brands posting every week."},
+    "plans.rules": {"pt": "Como funciona", "en": "How it works"},
+    "plans.credits": {"pt": "Banco de créditos", "en": "Credit bank"},
+    "plans.credits.note": {"pt": "Pague adiantado e use em qualquer item da tabela avulsa: posts, flyers, banners, documentos, criativos de tráfego.", "en": "Pay upfront and use it on anything in the one-off list: posts, flyers, banners, documents, ad creatives."},
+    "cr.pay": {"pt": "Você paga", "en": "You pay"},
+    "cr.get": {"pt": "Recebe em peças", "en": "You get in pieces"},
+    "cr.bonus": {"pt": "Bônus", "en": "Bonus"},
+    "cr.valid": {"pt": "Validade", "en": "Valid for"},
+    "cr.days": {"pt": "dias", "en": "days"},
+    "cr.cta": {"pt": "Quero um banco de créditos", "en": "I want a credit bank"},
+    "plans.how": {"pt": "Formas de contratar", "en": "Ways to hire"},
     "available": {"pt": "Disponível para novos projetos", "en": "Available for new projects"},
     "role": {"pt": "Designer · Social media, branding e tráfego pago", "en": "Designer · Social media, branding & paid ads"},
     "tagline": {"pt": "Design para redes sociais, anúncios e marcas, com estratégia por trás de cada peça.", "en": "Design for social media, ads and brands, with strategy behind every piece."},
@@ -495,7 +558,7 @@ T = {
     "palettes.title": {"pt": "Sete paletas, uma pauta", "en": "Seven palettes, one plan"},
     "palettes.text": {"pt": "Toque numa paleta para ir direto às peças.", "en": "Tap a palette to jump to its pieces."},
     "services.title": {"pt": "O que eu faço", "en": "What I do"},
-    "services.note": {"pt": "Planos mensais a partir de R$ 300, ou peças avulsas.", "en": "Monthly plans from R$ 300, or one-off pieces."},
+    "services.note": {"pt": "Planos mensais a partir de R$ 450, ou peças avulsas.", "en": "Monthly plans from R$ 450, or one-off pieces."},
     "process.title": {"pt": "Como trabalho", "en": "How I work"},
     "about.title": {"pt": "Sobre", "en": "About"},
     "about.hi": {"pt": "Prazer, Alan", "en": "Nice to meet you"},
