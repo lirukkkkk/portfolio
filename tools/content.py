@@ -429,7 +429,7 @@ PLANS = [
     {"key": "basico", "name": {"pt": "Básico", "en": "Basic"}, "price": 300, "single": 360, "off": 17,
      "for": {"pt": "Para começar com presença no feed.", "en": "To start building a presence on the feed."},
      "items": {"static": 3, "carousel": 1, "reels": 0, "stories": 0, "identity": False}},
-    {"key": "regular", "name": {"pt": "Regular", "en": "Regular"}, "price": 450, "single": 680, "off": 34,
+    {"key": "regular", "name": {"pt": "Regular", "en": "Regular"}, "price": 510, "single": 680, "off": 25,
      "for": {"pt": "Presença consistente com baixo investimento.", "en": "Consistent presence on a small budget."},
      "items": {"static": 4, "carousel": 2, "reels": 0, "stories": 5, "identity": False}},
     {"key": "premium", "name": {"pt": "Premium", "en": "Premium"}, "price": 800, "single": 1430, "off": 44,
