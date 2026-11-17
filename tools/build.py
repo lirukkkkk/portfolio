@@ -130,10 +130,10 @@ def head(title, desc, pre, css, canonical=""):
 
 def header(pre, home):
     home = home or "./"
-    nav = [("nav.work", "trabalhos"), ("nav.services", "servicos"), ("nav.about", "sobre"), ("nav.contact", "contato")]
-    links = "".join(f'<a href="{home}#{a}" >{tx(k)}</a>' for k, a in nav[:2])
+    nav = [("nav.work", "trabalhos"), ("nav.ads", "trafego"), ("nav.services", "servicos"), ("nav.about", "sobre"), ("nav.contact", "contato")]
+    links = "".join(f'<a href="{home}#{a}" >{tx(k)}</a>' for k, a in nav[:3])
     links += f'<a href="{home}planos.html">{tx("nav.plans")}</a>'
-    links += "".join(f'<a href="{home}#{a}" >{tx(k)}</a>' for k, a in nav[2:])
+    links += "".join(f'<a href="{home}#{a}" >{tx(k)}</a>' for k, a in nav[3:])
     return f'''<a class="skip" href="#main" data-i18n="skip">{T["skip"]["pt"]}</a>
 <header class="top"><div class="wrap">
 <a class="brand" href="{home}">Alan Veloso</a>
@@ -180,6 +180,22 @@ def seg_name(seg):
     return f'<span data-i18n="seg.{seg}">{e(SEGMENTS[seg]["pt"])}</span>'
 
 
+def cat_name(k):
+    I18N[f"cat.{k}"] = CATS[k]["en"]
+    return f'<span data-i18n="cat.{k}">{e(CATS[k]["pt"])}</span>'
+
+
+def cat_chips(target):
+    chips = f'<button class="chip" type="button" data-seg="all" aria-pressed="true">{tx("archive.all")}</button>'
+    for k in CATS:
+        chips += f'<button class="chip" type="button" data-seg="{k}" aria-pressed="false">{cat_name(k)}</button>'
+    return f'<div class="filters" data-filter="{target}" role="group" aria-label="Filtrar por categoria">{chips}</div>'
+
+
+def tags(c):
+    return " ".join(c.get("tags", []))
+
+
 # ---------- shared home sections ----------
 
 def sec_services():
@@ -216,6 +232,7 @@ def sec_palettes(pre):
 
 # (case, índice da peça contando todas as imagens do case)
 ARCHIVE = [
+    ("trafego-pago", 1), ("pod-mais", 3), ("inovorto", 0), ("trafego-pago", 15), ("pod-mais", 9),
     ("next-step", 11), ("terra-a-vista", 3), ("brenda-seda", 0), ("ilustracao", 0), ("breno-lima", 0), ("cr1a-grime", 0),
     ("kits-odonto", 9), ("jennifer-perez", 0), ("ruido", 0), ("raggaclubberz", 0), ("sucateiro", 1), ("cop", 0),
     ("ilustracao", 3), ("next-step", 2), ("cr1a-grime", 3), ("breno-lima", 23), ("terra-a-vista", 4), ("kits-odonto", 24),
@@ -230,25 +247,22 @@ def sec_archive(pre):
         c = BY[slug]
         flat = [it for x in c["groups"] if x["kind"] != "video" for it in x["items"]]
         src = flat[gi % len(flat)]
-        items += (f'<a href="{pre}trabalhos/{slug}.html" data-seg="{c["segment"]}"><figure>{pic(src, pre, "(max-width:600px) 50vw, 25vw", alt=c["client"])}'
+        items += (f'<a href="{pre}trabalhos/{slug}.html" data-tags="{tags(c)}"><figure>{pic(src, pre, "(max-width:600px) 50vw, 25vw", alt=c["client"])}'
                   f'<figcaption><span>{client_name(c)}</span><span>{seg_name(c["segment"])}</span></figcaption></figure></a>')
-    chips = f'<button class="chip" type="button" data-seg="all" aria-pressed="true">{tx("archive.all")}</button>'
-    for s in SEGMENTS:
-        chips += f'<button class="chip" type="button" data-seg="{s}" aria-pressed="false">{seg_name(s)}</button>'
     return f'''<section class="sec" id="arquivo" aria-labelledby="h-arc"><div class="wrap">
-<div class="sec-head"><h2 class="sec-title rv" id="h-arc">{tx("archive.title", "span")}</h2><div class="filters" data-filter="#arch" role="group" aria-label="Filtrar por segmento">{chips}</div></div>
+<div class="sec-head"><h2 class="sec-title rv" id="h-arc">{tx("archive.title", "span")}</h2>{cat_chips("#arch")}</div>
 <div class="arch" id="arch">{items}</div></div></section>'''
 
 
 def sec_about(pre, uid="a"):
     return f'''<section class="sec" id="sobre" aria-labelledby="h-ab"><div class="wrap about">
 <div class="rv">{avatar(uid, pre)}</div>
-<div class="about-copy"><h2 class="sec-title rv" id="h-ab" style="margin-bottom:32px">{tx("about.title", "span")}</h2>{tx("about.p1", "p", "rv")}{tx("about.p2", "p", "rv")}</div>
+<div class="about-copy"><h2 class="visually-hidden" id="h-ab">{tx("about.title", "span")}</h2><p class="pill rv">{tx("about.hi", "span")}</p>{tx("about.p1", "p", "rv about-lead")}{tx("about.p2", "p", "rv")}<hr class="about-rule rv"></div>
 </div></section>'''
 
 
 def sec_contact():
-    opts = "".join(f'<option value="{k}" data-i18n="opt.{k}">{e(T["opt." + k]["pt"])}</option>' for k in ["monthly", "identity", "pieces", "motion", "agency", "other"])
+    opts = "".join(f'<option value="{k}" data-i18n="opt.{k}">{e(T["opt." + k]["pt"])}</option>' for k in ["monthly", "ads", "identity", "pieces", "motion", "agency", "other"])
     return f'''<section class="sec contact" id="contato" aria-labelledby="h-ct"><div class="wrap contact-grid">
 <div>
 <h2 class="contact-big rv" id="h-ct">{tx("contact.title", "span")}</h2>
@@ -284,6 +298,34 @@ def deliver_line(c):
 
 # ---------- Homes ----------
 
+# Nome em lettering (Desirable Brush), montado como no layout do Alan.
+# Posições de cada palavra dentro do quadro 1118x792 (x, y = canto do SVG original).
+NAME_BOX = (1118, 792)
+NAME_POS = {"Alan": (60, 95), "Veloso": (150, 365)}
+
+
+def script_name():
+    W, H = NAME_BOX
+    defs, words = "", ""
+    for i, word in enumerate(("Alan", "Veloso")):
+        svg = open(os.path.join(ROOT, f"tools/nome/{word}.svg"), encoding="utf-8").read()
+        d = re.search(r'<path d="([^"]+)"', svg).group(1)
+        vw, vh = map(float, re.search(r'viewBox="0 0 ([\d.]+) ([\d.]+)"', svg).groups())
+        x, y = NAME_POS[word]
+        # máscara: faixa longa com borda suave na frente, que corre da esquerda para a direita (efeito de escrita).
+        # A faixa é bem mais larga que o desenho, então ao fim ela cobre tudo (inclusive floreios que saem do quadro).
+        BAND, FEATHER = 4000, 140
+        start = x - 260               # frente da faixa começa antes do floreio mais à esquerda
+        end = x + vw + 260            # e termina depois do último traço
+        defs += (f'<linearGradient id="nw-g{i}" x1="0" x2="1" y1="0" y2="0">'
+                 f'<stop offset="0" stop-color="#fff"/><stop offset="{1 - FEATHER / BAND:.4f}" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+                 f'<mask id="nw-m{i}" maskUnits="userSpaceOnUse" x="-2000" y="-2000" width="{W + 4000}" height="{H + 4000}">'
+                 f'<rect class="nw-wipe nw-w{i}" x="{start - BAND}" y="-2000" width="{BAND}" height="{H + 4000}" fill="url(#nw-g{i})" style="--dx:{end - start:.0f}px"/></mask>')
+        words += f'<g mask="url(#nw-m{i})"><path class="nw-p nw-p{i}" transform="translate({x} {y})" d="{d}"/></g>'
+    return (f'<svg class="nw" viewBox="0 0 {W} {H}" aria-hidden="true" focusable="false">'
+            f'<defs>{defs}</defs>{words}</svg>')
+
+
 def split_name():
     out, k = "", 0
     for word in ("Alan", "Veloso"):
@@ -295,41 +337,80 @@ def split_name():
     return out
 
 
-MQ = [("mq.0", "Social media", "Social media"), ("mq.1", "Branding", "Branding"), ("mq.2", "Flyers", "Flyers"), ("mq.3", "Capas de música", "Music covers"),
-      ("mq.4", "Identidade visual", "Visual identity"), ("mq.5", "Motion", "Motion"), ("mq.6", "Ilustração", "Illustration"), ("mq.7", "Carrosséis", "Carousels")]
+STAR = '<svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M50 0l7.6 31.6L85.4 14.6 68.4 42.4 100 50 68.4 57.6 85.4 85.4 57.6 68.4 50 100 42.4 68.4 14.6 85.4 31.6 57.6 0 50 31.6 42.4 14.6 14.6 42.4 31.6z"/></svg>'
 
 
 def marquee():
-    items = ""
-    for key, pt, en in MQ:
-        I18N[key] = en
-        items += f'<span data-i18n="{key}">{e(pt)}</span><i aria-hidden="true">✦</i>'
-    return f'<div class="mq" aria-hidden="true" data-marquee><div class="mq-track"><div class="mq-set">{items}</div><div class="mq-set">{items}</div></div></div>'
+    def one(hidden):
+        out = ""
+        for k in CATS:
+            a = ' tabindex="-1" aria-hidden="true"' if hidden else ""
+            out += f'<button type="button" class="mq-btn" data-cat="{k}"{a}>{cat_name(k)}</button><i aria-hidden="true">✦</i>'
+        return out
+    return (f'<nav class="mq" data-marquee aria-label="Categorias de trabalho"><div class="mq-track">'
+            f'<div class="mq-set">{one(False)}</div><div class="mq-set" aria-hidden="true">{one(True)}</div><div class="mq-set" aria-hidden="true">{one(True)}</div></div></nav>')
+
+
+def sec_ads(pre):
+    c = BY["trafego-pago"]
+    picks = [g["items"] for g in c["groups"]]
+    flat = [picks[0][0], picks[0][1], picks[1][0], picks[2][0], picks[0][2], picks[4][0], picks[3][0], picks[0][3]]
+    cards = "".join(f'<a class="ads-card" href="{pre}trabalhos/trafego-pago.html">{pic(it, pre, "(max-width:600px) 62vw, 280px", alt="Criativo de tráfego pago")}</a>' for it in flat)
+    return f'''<section class="sec ads" id="trafego" aria-labelledby="h-ads"><div class="wrap">
+<div class="sec-head"><h2 class="sec-title rv" id="h-ads">{tx("ads.title", "span")}</h2><div class="sec-note rv"><p>{tx("ads.text", "span")}</p><a class="link-arr" href="{pre}trabalhos/trafego-pago.html">{tx("ads.see")}{ICON["arr"]}</a></div></div>
+</div><div class="ads-strip rv" tabindex="0" aria-label="Criativos para tráfego pago">{cards}</div></section>'''
+
+
+def motion_videos(pre):
+    from PIL import Image
+    figs = ""
+    for c in CASES:
+        for gi, g in enumerate(c["groups"]):
+            if g["kind"] != "video":
+                continue
+            key = f"vg.{c['slug']}.{gi}"
+            lab = lt(key, g["label"])
+            for v in g["items"]:
+                w, h = Image.open(os.path.join(SITE, f"assets/video/{v}-poster.jpg")).size
+                cls = ' class="wide"' if w > h else ""
+                figs += (f'<figure{cls}><video controls playsinline preload="none" poster="{pre}assets/video/{v}-poster.jpg" aria-label="{e(c["client"])} - {e(g["label"]["pt"])}">'
+                         f'<source src="{pre}assets/video/{v}.mp4" type="video/mp4"></video>'
+                         f'<figcaption><a href="{pre}trabalhos/{c["slug"]}.html">{client_name(c)}</a><span data-i18n="{key}">{lab}</span></figcaption></figure>')
+    return f'<div class="ix-vids" id="ix-vids" hidden><p class="ix-vids-note">{tx("work.videos", "span")}</p>{figs}</div>'
 
 
 def home_v2(pre):
     rows = ""
     prev_imgs = ""
     for i, c in enumerate(CASES):
-        rows += (f'<li class="rv" style="--d:{i*50}ms"><a href="{pre}trabalhos/{c["slug"]}.html" data-preview-item="{c["slug"]}">'
+        rows += (f'<li class="rv" style="--d:{i*50}ms" data-tags="{tags(c)}"><a href="{pre}trabalhos/{c["slug"]}.html" data-preview-item="{c["slug"]}">'
                  f'<span class="ix-n">{i+1:02d}</span><span class="ix-c">{client_name(c)}</span>'
                  f'<span class="ix-s">{seg_name(c["segment"])}</span><span class="ix-d">{deliver_line(c)}</span>'
                  f'<span class="ix-t">{pic(c["cover"], pre, "120px", alt="")}</span><span class="ix-a">{ICON["ne"]}</span></a></li>')
         m = MAN[c["cover"]]
         prev_imgs += f'<img data-k="{c["slug"]}" src="{pre}{m["base"]}-{m["w"][0]}.webp" alt="" loading="lazy" decoding="async">'
+    ph = MAN[PHOTOS[0]]
+    photo = pic(PHOTOS[0], pre, "(max-width:860px) 100vw, 50vw", alt="Foto de Alan Veloso no centro de São Paulo", eager=True, cls="hero-photo")
     return f'''<main id="main">
-<section class="v2-hero"><div class="wrap">
-<p class="v2-role rv">{tx("role", "span")}<span class="avail">{tx("available")}</span></p>
-<h1 class="v2-name" aria-label="Alan Veloso">{split_name()}</h1>
-<div class="v2-row rv" style="--d:120ms"><p class="v2-tag">{tx("tagline", "span")}</p><div class="btn-row">{cta_whats()}</div></div>
+<section class="hero" aria-label="Apresentação"><div class="wrap hero-grid">
+<div class="hero-pic">{photo}</div>
+{STAR.replace('class="star"', 'class="star s1"')}{STAR.replace('class="star"', 'class="star s2"')}
+<h1 class="hero-name script-name" aria-label="Alan Veloso">{script_name()}</h1>
+<div class="hero-copy rv" style="--d:300ms">
+<p class="hero-role">{tx("role", "span")}</p>
+<p class="hero-tag">{tx("tagline", "span")}</p>
+<div class="btn-row">{cta_whats("btn light")}<span class="avail">{tx("available")}</span></div>
+</div>
 </div></section>
 {sec_about(pre)}
 {marquee()}
 <section class="sec v2-work" id="trabalhos" aria-labelledby="h-work"><div class="wrap">
-<div class="sec-head"><h2 class="sec-title rv" id="h-work">{tx("work.title", "span")}</h2><p class="sec-note rv">{tx("tagline.short", "span")}</p></div>
-<ol class="ix">{rows}</ol>
+<div class="sec-head"><h2 class="sec-title rv" id="h-work">{tx("work.title", "span")}</h2>{cat_chips("#ix")}</div>
+<ol class="ix" id="ix">{rows}</ol>
+{motion_videos(pre)}
+<p class="ix-empty" hidden>{tx("work.empty", "span")}</p>
 </div><div class="ix-prev" data-preview aria-hidden="true">{prev_imgs}</div></section>
-{sec_services()}{sec_process()}{sec_archive(pre)}{sec_contact()}
+{sec_ads(pre)}{sec_services()}{sec_process()}{sec_archive(pre)}{sec_contact()}
 </main>'''
 
 
@@ -370,7 +451,7 @@ def case_page(c, nxt):
     credit = f'<p class="credit" data-i18n="credit.ns">{e(c["credit"]["pt"])}</p>' if c["credit"] else ""
     if c["credit"]:
         I18N["credit.ns"] = c["credit"]["en"]
-    cover = ""
+    cover = f'<div class="case-banner rv">{pic(c["banner"], pre, "100vw", alt=c["client"], eager=True)}</div>' if c.get("banner") else ""
     body = f'''<body>
 {header(pre, pre)}
 <main id="main"><div class="wrap">
@@ -458,7 +539,7 @@ def write(path, html):
     open(full, "w", encoding="utf-8").write(html)
 
 
-DESC = "Alan Veloso, designer de social media e branding em São Paulo. Feed, identidade visual, carrosséis, motion e artes de evento para marcas e agências."
+DESC = "Alan Veloso, designer em São Paulo. Social media, criativos para tráfego pago, identidade visual e motion para marcas e agências."
 
 page = head("Alan Veloso — Social media e branding", DESC, "", ["base", "home"]) + "<body>" + header("", "./") + home_v2("") + footer("")
 write("index.html", page)

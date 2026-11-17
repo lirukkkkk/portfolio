@@ -3,7 +3,7 @@
 import os, sys, json, hashlib
 from PIL import Image, ImageOps
 sys.path.insert(0, os.path.dirname(__file__))
-from content import CASES, SRC
+from content import CASES, SRC, PHOTOS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "site/assets/img")
@@ -15,6 +15,8 @@ def widths(w):
 def export(src, slug, idx):
     if src.startswith("RENDER/"):
         p = os.path.join(ROOT, "tools/_render", src[7:])
+    elif src.startswith("FOTO/"):
+        p = os.path.join(ROOT, "Fotos Alan", src[5:])
     else:
         p = os.path.join(ROOT, SRC, src)
     name = hashlib.md5(src.encode()).hexdigest()[:10]
@@ -52,8 +54,12 @@ for c in CASES:
         for it in g["items"]:
             if it in man: continue
             i += 1; export(it, c["slug"], i)
-    if c["cover"] not in man:
-        i += 1; export(c["cover"], c["slug"], i)
+    for k in ("cover", "banner"):
+        if c.get(k) and c[k] not in man:
+            i += 1; export(c[k], c["slug"], i)
     print(c["slug"], i)
+
+for i, ph in enumerate(PHOTOS):
+    export(ph, "alan", i)
 
 json.dump(man, open(os.path.join(ROOT, "tools/manifest.json"), "w"), ensure_ascii=False, indent=1)

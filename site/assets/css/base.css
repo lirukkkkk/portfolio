@@ -451,3 +451,8 @@ html { scrollbar-color: var(--line) transparent; }
 
 .pal-block .group-head span { font-variant-numeric: normal; }
 .pal-block { margin-top: clamp(48px, 7vw, 96px); }
+
+/* Capa do case com a logo do cliente */
+.case-banner { margin: clamp(40px, 5vw, 72px) 0 clamp(40px, 6vw, 88px); }
+.case-banner .media { aspect-ratio: 16 / 9 !important; border-radius: var(--radius); overflow: hidden; }
+.case-banner img { width: 100%; height: 100%; object-fit: cover; }

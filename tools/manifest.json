@@ -1,4 +1,821 @@
 {
+ "Trafego Pago/Implante 01 - Educativo.jpg": {
+  "base": "assets/img/trafego-pago/e963e48f13",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#3f474f",
+   "#7b818f",
+   "#685b58",
+   "#fcfbfb",
+   "#634e49",
+   "#d8dce3"
+  ]
+ },
+ "Trafego Pago/Implante 02 - Prova Social.jpg": {
+  "base": "assets/img/trafego-pago/7e9b315a69",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#2578cb",
+   "#7e5b53",
+   "#156cc3",
+   "#b8c7d6",
+   "#6c8cb6",
+   "#477bb6"
+  ]
+ },
+ "Trafego Pago/Implante 03 - Ofertal.jpg": {
+  "base": "assets/img/trafego-pago/9ee24f6a40",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#181816",
+   "#1c1a17",
+   "#497fb7",
+   "#354658",
+   "#cfd2d1",
+   "#0c0d13"
+  ]
+ },
+ "Trafego Pago/Implante 04 - Ultima Chamada.jpg": {
+  "base": "assets/img/trafego-pago/45ca7ffefa",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#2e241e",
+   "#7f7473",
+   "#056cda",
+   "#574d4e",
+   "#c4cbcb",
+   "#73849d"
+  ]
+ },
+ "Trafego Pago/Semana do Implante - Anúncio.jpg": {
+  "base": "assets/img/trafego-pago/5e603efbef",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#478af8",
+   "#357ee5",
+   "#f0f5f7",
+   "#84a6d9",
+   "#215fb6",
+   "#4390f9"
+  ]
+ },
+ "Trafego Pago/Semana do Implante - Prótese.jpg": {
+  "base": "assets/img/trafego-pago/8a24546465",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#332b2e",
+   "#937161",
+   "#d0a38f",
+   "#e4dabd",
+   "#90a2a8",
+   "#4e5f80"
+  ]
+ },
+ "Trafego Pago/Semana do Implante - Mosaico.jpg": {
+  "base": "assets/img/trafego-pago/bf404ce4f4",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#0c0e14",
+   "#1d1b1f",
+   "#82584c",
+   "#ac7b6b",
+   "#3a2726",
+   "#c6a49c"
+  ]
+ },
+ "Trafego Pago/Semana do Implante - Amanhã.jpg": {
+  "base": "assets/img/trafego-pago/330d90117d",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#0088f0",
+   "#f1e48e",
+   "#4a96f2",
+   "#a3aba3",
+   "#4661a2",
+   "#0986ea"
+  ]
+ },
+ "Trafego Pago/Implant Day - Divulgação.jpg": {
+  "base": "assets/img/trafego-pago/1dd19b48c8",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#70a2fc",
+   "#f7e77c",
+   "#3499ed",
+   "#6ca2fb",
+   "#487fd7",
+   "#a5b2a6"
+  ]
+ },
+ "Trafego Pago/Black Sorriso /Estático 1.jpg": {
+  "base": "assets/img/trafego-pago/b047d9619a",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#020101",
+   "#d59f24",
+   "#32230d",
+   "#8f5f18",
+   "#f8f3ee",
+   "#0a0602"
+  ]
+ },
+ "Trafego Pago/Black Sorriso /Estatico 3.jpg": {
+  "base": "assets/img/trafego-pago/65a62fe51f",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#101010",
+   "#0a0b0b",
+   "#9d6f53",
+   "#bfb4a9",
+   "#eae8e6",
+   "#281d17"
+  ]
+ },
+ "Trafego Pago/Black Sorriso /Estatico 4.jpg": {
+  "base": "assets/img/trafego-pago/0a550a8818",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#0a0a0a",
+   "#110e0a",
+   "#d47731",
+   "#050505",
+   "#492d14",
+   "#f3dbb8"
+  ]
+ },
+ "Trafego Pago/Black Sorriso /Falta 1.jpg": {
+  "base": "assets/img/trafego-pago/c628d3ddc5",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#110b03",
+   "#070502",
+   "#fcfefd",
+   "#0b0803",
+   "#c2b7a2",
+   "#492f18"
+  ]
+ },
+ "Trafego Pago/Black Sorriso /É hoje.jpg": {
+  "base": "assets/img/trafego-pago/2d4af42b41",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#130b04",
+   "#070502",
+   "#0c0804",
+   "#fdfcfb",
+   "#3a2413",
+   "#d1b193"
+  ]
+ },
+ "Trafego Pago/Black Sorriso /Último dia.jpg": {
+  "base": "assets/img/trafego-pago/22f955daa6",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#070502",
+   "#1a0f04",
+   "#fffffa",
+   "#0f0a04",
+   "#f4edda",
+   "#886d59"
+  ]
+ },
+ "Trafego Pago/Semana do Sorriso/Semana do Sorriso - Anúncio da ação.jpg": {
+  "base": "assets/img/trafego-pago/f1ade1fd4f",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#e5e385",
+   "#131718",
+   "#171a17",
+   "#0f1213",
+   "#3a3527",
+   "#121718"
+  ]
+ },
+ "Trafego Pago/Semana do Sorriso/Semana do Sorriso - Avaliação Gratuita.jpg": {
+  "base": "assets/img/trafego-pago/ad5c6728a5",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#151718",
+   "#d3ccba",
+   "#0e1010",
+   "#63563a",
+   "#e8e8a1",
+   "#1a110d"
+  ]
+ },
+ "Trafego Pago/Semana do Sorriso/Semana do Sorriso - Avaliação Gratuita-1.jpg": {
+  "base": "assets/img/trafego-pago/3a1a1940b0",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#131718",
+   "#81663e",
+   "#0e0f10",
+   "#c4ac73",
+   "#f1ec7b",
+   "#282218"
+  ]
+ },
+ "Trafego Pago/Semana do Sorriso/Semana do Sorriso - Desconto Revelado.jpg": {
+  "base": "assets/img/trafego-pago/cf42a7b7f2",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#141718",
+   "#0f1212",
+   "#1d1f16",
+   "#e6e32c",
+   "#fcfba1",
+   "#6a6b35"
+  ]
+ },
+ "Trafego Pago/Protocolo Inferior - Dentista + (Sem Preço).jpg": {
+  "base": "assets/img/trafego-pago/7623f3cab3",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#d8225b",
+   "#ceb39b",
+   "#d72c48",
+   "#db2354",
+   "#7f1724",
+   "#db1e53"
+  ]
+ },
+ "Trafego Pago/Protocolo Superior - Dentista +(Sem Preço).jpg": {
+  "base": "assets/img/trafego-pago/d8abf13bc2",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#dc2558",
+   "#e22952",
+   "#d8d19d",
+   "#d5676c",
+   "#b01e44",
+   "#dc2353"
+  ]
+ },
+ "Trafego Pago/Implante Unitario - Dentista + (Sem Preço).jpg": {
+  "base": "assets/img/trafego-pago/d9e9b90e18",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#df244b",
+   "#d1918c",
+   "#eff8d3",
+   "#a71c3c",
+   "#e1d9ca",
+   "#ca4758"
+  ]
+ },
+ "Trafego Pago/Carga Imediata - Dentista +.jpg": {
+  "base": "assets/img/trafego-pago/6dcd0fca2f",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#db2559",
+   "#e12e54",
+   "#e6e9bc",
+   "#da2155",
+   "#9b1b37",
+   "#dea297"
+  ]
+ },
+ "Trafego Pago/Clínica 269 - Clareamento (C).jpg": {
+  "base": "assets/img/trafego-pago/7728c6f7b3",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#102335",
+   "#a56a58",
+   "#c9a98b",
+   "#84382d",
+   "#481813",
+   "#eacfa3"
+  ]
+ },
+ "Trafego Pago/Semana da Prótese - Prótese de Grampo.jpg": {
+  "base": "assets/img/trafego-pago/ea9d5e8e02",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#000000",
+   "#874937",
+   "#000004",
+   "#dbb85b",
+   "#42110e",
+   "#3f0000"
+  ]
+ },
+ "POD+/Thumbnail - Filipe Trabuco EP 6.jpg": {
+  "base": "assets/img/pod-mais/6f41fa4cb2",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#14141b",
+   "#402e30",
+   "#e3d4d7",
+   "#2f151a",
+   "#0c1016",
+   "#a49497"
+  ]
+ },
+ "POD+/Thumbnail - Episódio 5.jpg": {
+  "base": "assets/img/pod-mais/80a2b4f99d",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#383839",
+   "#060b0f",
+   "#19181b",
+   "#0e1014",
+   "#827066",
+   "#bbaca0"
+  ]
+ },
+ "POD+/Reels/Trabuco - Capa Corte 1.jpg": {
+  "base": "assets/img/pod-mais/ce18038bec",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1920
+  ],
+  "colors": [
+   "#000f18",
+   "#000205",
+   "#83746e",
+   "#283438",
+   "#090d0f",
+   "#a8afac"
+  ]
+ },
+ "POD+/Reels/Capa Reels - 01.jpg": {
+  "base": "assets/img/pod-mais/a22a89fa10",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1920
+  ],
+  "colors": [
+   "#050406",
+   "#10111c",
+   "#0e0a12",
+   "#322223",
+   "#1d141a",
+   "#7c6b64"
+  ]
+ },
+ "POD+/Reels/Trabuco - Capa Corte 5.jpg": {
+  "base": "assets/img/pod-mais/79ccb2afce",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1920
+  ],
+  "colors": [
+   "#000c13",
+   "#040505",
+   "#122226",
+   "#615752",
+   "#a4aba7",
+   "#060c0d"
+  ]
+ },
+ "POD+/Reels/Capa Reels - 02.jpg": {
+  "base": "assets/img/pod-mais/0cc7818d06",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1920
+  ],
+  "colors": [
+   "#030405",
+   "#020a10",
+   "#001825",
+   "#8a9fa4",
+   "#353d42",
+   "#12191e"
+  ]
+ },
+ "POD+/Reels/Trabuco - Capa Corte 6.jpg": {
+  "base": "assets/img/pod-mais/bc55c9cd54",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1920
+  ],
+  "colors": [
+   "#020405",
+   "#0b1416",
+   "#384445",
+   "#142327",
+   "#282b29",
+   "#7b8e8a"
+  ]
+ },
+ "POD+/Carrossel Trabuco 1 - 1.jpg": {
+  "base": "assets/img/pod-mais/9e2eb9c72d",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#24263d",
+   "#858fa1",
+   "#606889",
+   "#9dbcc7",
+   "#4d4a6b",
+   "#d2cdcf"
+  ]
+ },
+ "POD+/Carrossel Trabuco 1 - 2.jpg": {
+  "base": "assets/img/pod-mais/3aa463f43c",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#181a20",
+   "#081015",
+   "#4e4d4b",
+   "#999c97",
+   "#c8d3d2",
+   "#051c23"
+  ]
+ },
+ "POD+/Carrossel Trabuco 1 - 3.jpg": {
+  "base": "assets/img/pod-mais/0ce3213cbb",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#02080a",
+   "#252828",
+   "#4f4c49",
+   "#b6c2bb",
+   "#99968e",
+   "#111719"
+  ]
+ },
+ "POD+/Feed/Estático - Bernardo Nicolau.jpg": {
+  "base": "assets/img/pod-mais/59b3578357",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#010a0f",
+   "#181616",
+   "#2a3538",
+   "#59433c",
+   "#746d66",
+   "#a1bbaf"
+  ]
+ },
+ "POD+/Feed/Estático 3 - Filipe Trabuco.jpg": {
+  "base": "assets/img/pod-mais/bd2d6cb787",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#00121b",
+   "#111719",
+   "#2e3535",
+   "#c7c0b4",
+   "#624c40",
+   "#958974"
+  ]
+ },
+ "POD+/Feed/Estático 2 - Filipe Trabuco.jpg": {
+  "base": "assets/img/pod-mais/0d504801dc",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#14141a",
+   "#6c7fd0",
+   "#101116",
+   "#171e23",
+   "#a9d3cd",
+   "#403d57"
+  ]
+ },
+ "RENDER/covers/pod-mais.jpg": {
+  "base": "assets/img/pod-mais/51b6834874",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1200,
+   1500
+  ],
+  "colors": [
+   "#111217",
+   "#e1faf6",
+   "#4e7773",
+   "#0c0c11",
+   "#111218",
+   "#101217"
+  ]
+ },
+ "RENDER/covers/pod-mais-wide.jpg": {
+  "base": "assets/img/pod-mais/9d3cfceb28",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#16171c",
+   "#111217",
+   "#121318",
+   "#32373b",
+   "#0d0d12",
+   "#111318"
+  ]
+ },
+ "InovOrto/Capa InovOrto.jpg": {
+  "base": "assets/img/inovorto/b57f2ec1fc",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1920
+  ],
+  "colors": [
+   "#000000",
+   "#0c0301",
+   "#2d190f",
+   "#040000",
+   "#9f9187",
+   "#000001"
+  ]
+ },
+ "RENDER/covers/inovorto.jpg": {
+  "base": "assets/img/inovorto/6b44b874cb",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1200,
+   1500
+  ],
+  "colors": [
+   "#00405e",
+   "#5c98b5",
+   "#015a7f",
+   "#156f94",
+   "#bad4e3",
+   "#f9fbfc"
+  ]
+ },
+ "RENDER/covers/inovorto-wide.jpg": {
+  "base": "assets/img/inovorto/d1974a6063",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#005b7f",
+   "#4d8ead",
+   "#013f5c",
+   "#a3c6d9",
+   "#e3eef4",
+   "#0b6285"
+  ]
+ },
  "Next Step/1.jpg": {
   "base": "assets/img/next-step/7037a8ebaa",
   "w": [
@@ -282,6 +1099,120 @@
    "#47119a",
    "#020019",
    "#000017"
+  ]
+ },
+ "RENDER/covers/next-step.jpg": {
+  "base": "assets/img/next-step/3d10127e0c",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1200,
+   1500
+  ],
+  "colors": [
+   "#0e0d12",
+   "#f2f2f2",
+   "#0d0d0f",
+   "#554b6a",
+   "#100d18",
+   "#140630"
+  ]
+ },
+ "RENDER/covers/next-step-wide.jpg": {
+  "base": "assets/img/next-step/2dff030d57",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#0e0d12",
+   "#dfdfe0",
+   "#534967",
+   "#0d0d0e",
+   "#0f0d17",
+   "#14062e"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - O que usar/CARROSSEL - OQUE USAR OQUE NAO USAR.jpg": {
+  "base": "assets/img/breno-lima/bba3908305",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#181a10",
+   "#61aee4",
+   "#445f65",
+   "#50a5df",
+   "#dfeee2",
+   "#82bbe0"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - O que usar/CARROSSEL - OQUE USAR OQUE NAO USAR 2.jpg": {
+  "base": "assets/img/breno-lima/94ffb1640a",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#2a1d15",
+   "#675747",
+   "#533a27",
+   "#413429",
+   "#968a76",
+   "#c5bdaf"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - O que usar/CARROSSEL - OQUE USAR OQUE NAO USAR 3.jpg": {
+  "base": "assets/img/breno-lima/095c19aedd",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#311208",
+   "#7d2f16",
+   "#1d0d05",
+   "#471508",
+   "#6a220b",
+   "#af9180"
+  ]
+ },
+ "Arquiteto Breno Lima/Carrossel - O que usar/CARROSSEL - OQUE USAR OQUE NAO USAR 4.jpg": {
+  "base": "assets/img/breno-lima/bbfcb02378",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1080,
+   1350
+  ],
+  "colors": [
+   "#7b7b7f",
+   "#87868c",
+   "#4c4948",
+   "#646768",
+   "#746e6f",
+   "#b4b3b7"
   ]
  },
  "Arquiteto Breno Lima/CARROSSEL - CONSTRUÇÃO MODULAR 01/CARROSSEL - CONSTRUÇÃO MODULAR 01.jpg": {
@@ -949,6 +1880,44 @@
    "#d9cfd1"
   ]
  },
+ "RENDER/covers/breno-lima.jpg": {
+  "base": "assets/img/breno-lima/beb1815158",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1200,
+   1500
+  ],
+  "colors": [
+   "#2e421f",
+   "#dcfb82",
+   "#2a3e1d",
+   "#839b4f",
+   "#2d421f",
+   "#2e421e"
+  ]
+ },
+ "RENDER/covers/breno-lima-wide.jpg": {
+  "base": "assets/img/breno-lima/b89486300c",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#2e421f",
+   "#dbfa82",
+   "#e0fe85",
+   "#2a3d1c",
+   "#87a052",
+   "#dbfb82"
+  ]
+ },
  "Dr Brenda/Frame 427321733.png": {
   "base": "assets/img/brenda-seda/2cceb7a750",
   "w": [
@@ -1061,6 +2030,44 @@
    "#3c2d26",
    "#a69186",
    "#1e1814"
+  ]
+ },
+ "RENDER/covers/brenda-seda.jpg": {
+  "base": "assets/img/brenda-seda/2e527d1a34",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1200,
+   1500
+  ],
+  "colors": [
+   "#f1efe3",
+   "#dccaba",
+   "#f1efe2",
+   "#f3f2e6",
+   "#f2efe4",
+   "#f0efe3"
+  ]
+ },
+ "RENDER/covers/brenda-seda-wide.jpg": {
+  "base": "assets/img/brenda-seda/495f01f6ec",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#f1efe3",
+   "#dfcfc0",
+   "#f0efe3",
+   "#f2f2e6",
+   "#f1efe4",
+   "#f2efe4"
   ]
  },
  "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Clínico/Estáticos/Azul Clínico - Estático 1.png": {
@@ -2963,25 +3970,6 @@
    "#911616"
   ]
  },
- "CASSIEL/RainhaDaDança02.jpg": {
-  "base": "assets/img/ilustracao/7ab3933eb0",
-  "w": [
-   800,
-   1600
-  ],
-  "ratio": [
-   3000,
-   3000
-  ],
-  "colors": [
-   "#4c161f",
-   "#0a0e0b",
-   "#c0783d",
-   "#3d131d",
-   "#6c3b26",
-   "#2d161a"
-  ]
- },
  "CASSIEL/CASSIEL C LETTERING.jpg": {
   "base": "assets/img/ilustracao/8b23908fa8",
   "w": [
@@ -3018,44 +4006,6 @@
    "#e7e1d4",
    "#f6f5f1",
    "#edeeee"
-  ]
- },
- "AUG ICON/LittleAug.png": {
-  "base": "assets/img/ilustracao/ec9af64604",
-  "w": [
-   480,
-   960
-  ],
-  "ratio": [
-   938,
-   938
-  ],
-  "colors": [
-   "#f2f1ed",
-   "#2b2c2c",
-   "#f2f1ec",
-   "#868077",
-   "#f2f2ee",
-   "#f2f1ee"
-  ]
- },
- "AUG ICON/SintoniaVibes.png": {
-  "base": "assets/img/ilustracao/9199893b7a",
-  "w": [
-   480,
-   960
-  ],
-  "ratio": [
-   938,
-   938
-  ],
-  "colors": [
-   "#181817",
-   "#1a2120",
-   "#fbfefe",
-   "#285457",
-   "#191b1a",
-   "#c8e4e6"
   ]
  },
  "ART NILL/NILL ART JPEG MAXIMO.jpg": {
@@ -3189,6 +4139,25 @@
    "#862e0d",
    "#96633b",
    "#6b0203"
+  ]
+ },
+ "FOTO/alan-centro-sp.jpg": {
+  "base": "assets/img/alan/81c8763c95",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   834,
+   831
+  ],
+  "colors": [
+   "#020710",
+   "#221814",
+   "#443628",
+   "#655948",
+   "#1a2b3d",
+   "#90836f"
   ]
  }
 }

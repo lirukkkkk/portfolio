@@ -204,18 +204,41 @@
     if (!vid.muted) vid.play().catch(() => {});
   }));
 
-  /* ---------- Archive filter ---------- */
-  $$("[data-filter]").forEach((bar) => {
+  /* ---------- Category filters (work index + archive) ---------- */
+  const setFilter = (bar, seg) => {
     const target = document.querySelector(bar.dataset.filter);
+    $$("button", bar).forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.seg === seg)));
+    const items = $$("[data-tags]", target);
+    const apply = () => {
+      let shown = 0;
+      items.forEach((it) => { const ok = seg === "all" || it.dataset.tags.split(" ").includes(seg); it.hidden = !ok; if (ok) shown++; });
+      const empty = target.parentElement.querySelector(".ix-empty");
+      if (empty) empty.hidden = shown > 0;
+      const vids = target.id === "ix" && document.getElementById("ix-vids");
+      if (vids) {
+        const on = seg === "motion";
+        vids.hidden = !on; target.hidden = on;
+        if (on && empty) empty.hidden = true;
+        if (!on) $$("video", vids).forEach((v) => v.pause());
+      }
+    };
+    if (document.startViewTransition && !reduce) document.startViewTransition(apply); else apply();
+    if (bar.dataset.filter === "#ix") $$(".mq-btn").forEach((m) => m.classList.toggle("on", m.dataset.cat === seg));
+  };
+  $$("[data-filter]").forEach((bar) => {
     bar.addEventListener("click", (e) => {
       const b = e.target.closest("button[data-seg]");
-      if (!b) return;
-      $$("button", bar).forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
-      const seg = b.dataset.seg;
-      const items = $$("[data-seg]", target);
-      const apply = () => items.forEach((it) => { it.hidden = seg !== "all" && it.dataset.seg !== seg; });
-      if (document.startViewTransition && !reduce) document.startViewTransition(apply); else apply();
+      if (b) setFilter(bar, b.dataset.seg);
     });
+  });
+  document.addEventListener("click", (e) => {
+    const m = e.target.closest(".mq-btn");
+    if (!m) return;
+    const bar = document.querySelector('[data-filter="#ix"]');
+    if (!bar) return;
+    const seg = m.classList.contains("on") ? "all" : m.dataset.cat;
+    setFilter(bar, seg);
+    document.getElementById("trabalhos").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
   });
 
   /* ---------- Scroll progress ---------- */
@@ -242,12 +265,18 @@
       while (x > 0) x -= half;
     };
     new IntersectionObserver((en) => { visible = en[0].isIntersecting; }).observe(mq);
+    let moved = false, hover = false;
+    mq.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") hover = true; });
+    mq.addEventListener("pointerleave", () => { hover = false; });
     mq.addEventListener("pointerdown", (e) => {
-      down = true; px = lastX = e.clientX; lastT = performance.now(); vel = 0;
-      mq.setPointerCapture(e.pointerId); mq.classList.add("is-dragging");
+      down = true; moved = false; px = lastX = e.clientX; lastT = performance.now(); vel = 0;
     });
     mq.addEventListener("pointermove", (e) => {
       if (!down) return;
+      if (!moved) {
+        if (Math.abs(e.clientX - px) < 6) return;
+        moved = true; mq.setPointerCapture(e.pointerId); mq.classList.add("is-dragging");
+      }
       const now = performance.now(), dx = e.clientX - lastX;
       x += dx * 1.6;
       vel = (dx * 1.6) / Math.max(1, now - lastT);
@@ -255,12 +284,13 @@
       wrap(); track.style.transform = "translate3d(" + x + "px,0,0)";
     });
     const up = () => { down = false; mq.classList.remove("is-dragging"); };
+    mq.addEventListener("click", (e) => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
     mq.addEventListener("pointerup", up);
     mq.addEventListener("pointercancel", up);
     const tick = (now) => {
       const dt = Math.min(64, now - last); last = now;
       if (visible && !down) {
-        x += (reduce ? 0 : -0.04 * dt) + vel * dt;
+        x += (reduce || hover ? 0 : -0.04 * dt) + vel * dt;
         vel *= 0.94;
         if (Math.abs(vel) < 0.002) vel = 0;
         wrap(); track.style.transform = "translate3d(" + x + "px,0,0)";
