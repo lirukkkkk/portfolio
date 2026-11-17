@@ -23,6 +23,10 @@ ICON = {
     "l": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>',
     "r": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>',
     "x": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+    "share": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3.5M7.5 8 12 3.5 16.5 8"/><path d="M5 12.5v5.5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5.5"/></svg>',
+    "down": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5V15M7.5 10.5 12 15l4.5-4.5"/><path d="M5 12.5v5.5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5.5"/></svg>',
+    "link": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg>',
+    "mail": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 6 8-6"/></svg>',
     "snd": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>',
 }
 
@@ -104,7 +108,7 @@ def head(title, desc, pre, css, canonical=""):
     ga = ""
     if GA_ID:
         ga = f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag("js",new Date());gtag("config","{GA_ID}");</script>'
-    og = f"{SITE_URL}/assets/og.jpg" if SITE_URL else f"{pre}assets/og.jpg"
+    og = (f"{SITE_URL}/assets/og.jpg" if SITE_URL else f"{pre}assets/og.jpg") + f"?v={ver('assets/og.jpg')}"
     links = "".join(f'<link rel="stylesheet" href="{pre}assets/css/{c}.css?v={ver("assets/css/" + c + ".css")}">' for c in css)
     return f'''<!doctype html>
 <html lang="pt-BR">
@@ -118,6 +122,10 @@ def head(title, desc, pre, css, canonical=""):
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:image" content="{og}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Alan Veloso">
+<meta name="twitter:image" content="{og}">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{pre}assets/avatar/favicon.svg" type="image/svg+xml"><link rel="icon" href="{pre}assets/avatar/favicon.png" type="image/png" sizes="180x180"><link rel="apple-touch-icon" href="{pre}assets/avatar/favicon.png">
@@ -148,6 +156,17 @@ def header(pre, home):
 def footer(pre):
     return f'''<footer class="foot"><div class="wrap">
 <span>© 2026 Alan Veloso · {tx("footer")}</span>
+<div class="foot-act">
+<a class="icon-btn foot-btn" href="{pre}assets/portfolio-alan-veloso.pdf" download="Portfolio Alan Veloso.pdf" aria-label="{T["pdf.download"]["pt"]}" data-i18n-attr="aria-label:pdf.download" title="{T["pdf.download"]["pt"]}">{ICON["down"]}</a>
+<div class="share">
+<button class="icon-btn foot-btn" type="button" data-share aria-haspopup="true" aria-expanded="false" aria-label="{T["share"]["pt"]}" data-i18n-attr="aria-label:share" title="{T["share"]["pt"]}">{ICON["share"]}</button>
+<div class="share-pop" role="menu" hidden>
+<button type="button" role="menuitem" data-share-copy>{ICON["link"]}{tx("share.copy")}</button>
+<a role="menuitem" data-share-whats href="#" target="_blank" rel="noopener">{ICON["wa"]}{tx("share.whats")}</a>
+<a role="menuitem" data-share-mail href="#">{ICON["mail"]}{tx("share.email")}</a>
+</div>
+</div>
+</div>
 <span><a href="{INSTAGRAM}" rel="noopener" target="_blank">Instagram</a> · <a href="{BEHANCE}" rel="noopener" target="_blank">Behance</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></span>
 </div></footer>
 <dialog class="lb" aria-label="Imagem ampliada">

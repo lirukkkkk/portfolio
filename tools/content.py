@@ -538,4 +538,11 @@ T = {
     "skip": {"pt": "Pular para o conteúdo", "en": "Skip to content"},
     "footer": {"pt": "São Paulo", "en": "São Paulo"},
     "sound": {"pt": "Ativar som", "en": "Turn sound on"},
+    "pdf.download": {"pt": "Baixar portfólio em PDF", "en": "Download portfolio PDF"},
+    "pdf.short": {"pt": "PDF", "en": "PDF"},
+    "share": {"pt": "Compartilhar", "en": "Share"},
+    "share.copy": {"pt": "Copiar link", "en": "Copy link"},
+    "share.copied": {"pt": "Link copiado", "en": "Link copied"},
+    "share.whats": {"pt": "Enviar pelo WhatsApp", "en": "Send via WhatsApp"},
+    "share.email": {"pt": "Enviar por e-mail", "en": "Send via e-mail"},
 }
