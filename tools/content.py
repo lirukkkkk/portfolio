@@ -500,7 +500,7 @@ T = {
     "about.title": {"pt": "Sobre", "en": "About"},
     "about.hi": {"pt": "Prazer, Alan", "en": "Nice to meet you"},
     "about.p1": {"pt": "Design, pra mim, é identidade com estratégia. Há mais de 7 anos crio a parte visual de marcas e já atendi mais de 100 clientes, de clínicas a escritórios de arquitetura, podcasts, selos de música e festas.", "en": "To me, design is identity with strategy. For over 7 years I've been creating the visual side of brands, and I've worked with more than 100 clients, from clinics to architecture studios, podcasts, music labels and parties."},
-    "about.p2": {"pt": "Cuido do feed, da identidade, dos anúncios e dos vídeos sempre pensando em quem está do outro lado da tela. Me formei em artes digitais e audiovisual na SAGA.", "en": "I handle the feed, the identity, the ads and the videos, always thinking about who's on the other side of the screen. I studied digital art and audiovisual at SAGA."},
+    "about.p2": {"pt": "Cuido do feed, da identidade visual, dos anúncios e dos vídeos sempre pensando em atingir mais pessoas com o seu produto, com consistência visual. Formado em artes digitais e audiovisual na escola SAGA.", "en": "I handle the feed, the visual identity, the ads and the videos, always focused on reaching more people with your product, with visual consistency. Trained in digital art and audiovisual at SAGA school."},
     "contact.title": {"pt": "Vamos conversar?", "en": "Let's talk?"},
     "contact.text": {"pt": "Me conta o que você precisa. Respondo de segunda a sexta, das 9h às 22h.", "en": "Tell me what you need. I reply Monday to Friday, 9am to 10pm (BRT)."},
     "form.name": {"pt": "Seu nome", "en": "Your name"},

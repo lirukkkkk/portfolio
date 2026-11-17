@@ -41,15 +41,17 @@ font = "file://" + os.path.join(SITE, "assets/fonts/host-grotesk-latin.woff2")
 og = f'''<html><head><meta charset="utf-8"><style>
 @font-face {{ font-family: H; src: url("{font}"); }}
 body {{ margin: 0; width: 1200px; height: 630px; background: {BG}; color: {FG}; font-family: H, Helvetica, sans-serif; position: relative; overflow: hidden; }}
-.name {{ position: absolute; left: 40px; top: 30px; width: 640px; color: {FG}; }}
+.photo {{ position: absolute; left: 70px; top: 60px; width: 400px; height: 510px; object-fit: cover; object-position: 50% 35%; }}
+.name {{ position: absolute; left: 500px; top: 26px; width: 630px; color: {FG}; z-index: 2; }}
 .name svg {{ width: 100%; height: auto; display: block; overflow: visible; }}
 .name .nw-wipe {{ display: none; }} .name mask {{ display: none; }} .name g[mask] {{ mask: none; }}
 .nw-p {{ fill: currentColor; }}
-.meta {{ position: absolute; right: 76px; bottom: 64px; text-align: right; font-size: 26px; letter-spacing: -0.01em; }}
+.meta {{ position: absolute; right: 76px; bottom: 52px; z-index: 2; text-align: right; font-size: 26px; letter-spacing: -0.01em; }}
 .meta small {{ display: block; font-size: 18px; color: #9a9992; margin-top: 8px; text-transform: uppercase; letter-spacing: .04em; }}
-.dm {{ position: absolute; color: {FG}; }} .dm.a {{ right: 90px; top: 50px; width: 230px; height: auto; }}
-.dm.c {{ right: 330px; top: 170px; width: 190px; height: auto; color: #8f97ff; }}
+.dm {{ position: absolute; color: {FG}; }} .dm.a {{ right: 70px; top: 40px; width: 220px; height: auto; opacity: .85; }}
+.dm.c {{ left: 420px; top: 150px; width: 210px; height: auto; color: #8f97ff; opacity: .7; }}
 </style></head><body>
+<img class="photo" src="file://{os.path.join(ROOT, 'Fotos Alan/alan-centro-sp.jpg')}">
 <div class="name">{script_name()}</div>
 {star_svg("estrela-2", "a")}{star_svg("estrela-1", "c")}
 <div class="meta">Social media, branding e tráfego pago<small>Designer · São Paulo</small></div>
