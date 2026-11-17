@@ -126,3 +126,39 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .hero-name.script-name { color: var(--h-fg); mix-blend-mode: normal; }
 }
+
+/* ---------- Efeito dot matrix (brilhos pontilhados) ---------- */
+.dm { display: block; overflow: visible; }
+.dm-g { animation: dm-blink 2.8s steps(1, end) infinite; }
+.dm-g1 { animation-delay: -0.9s; animation-duration: 3.4s; }
+.dm-g2 { animation-delay: -1.7s; animation-duration: 2.2s; }
+@keyframes dm-blink { 0%, 100% { opacity: 1; } 45% { opacity: 0.35; } 70% { opacity: 0.8; } }
+@media (prefers-reduced-motion: reduce) { .dm-g { animation: none; } }
+.star.dm { animation: none; height: auto; }
+.star.s1 { width: clamp(70px, 8vw, 140px); left: 43%; top: -3%; }
+.star.s2 { width: clamp(52px, 5.4vw, 96px); right: 2%; bottom: 3%; }
+.star.s3 { width: clamp(28px, 2.6vw, 46px); right: 7%; top: 6%; position: absolute; color: var(--h-fg); }
+.star.s4 { width: clamp(20px, 1.8vw, 32px); right: 3%; top: 15%; position: absolute; color: var(--h-fg); opacity: 0.7; }
+@media (max-width: 860px) { .star.s3, .star.s4 { display: none; } }
+.contact-grid > div:first-child { position: relative; }
+.dm-contact { position: absolute; right: 0; top: -18%; width: clamp(120px, 15vw, 230px); color: var(--accent); pointer-events: none; z-index: 0; }
+.contact-big { position: relative; z-index: 1; }
+@media (max-width: 860px) { .dm-contact { width: 30vw; top: -8%; opacity: 0.7; } }
+.star.s1.dm { width: clamp(96px, 10vw, 176px); left: 41%; top: -5%; }
+.star.s2.dm { width: clamp(64px, 6.4vw, 116px); }
+.star.s3.dm { width: clamp(40px, 3.6vw, 64px); }
+.star.s4.dm { width: clamp(26px, 2.4vw, 42px); }
+
+/* ---------- Estrelas pontilhadas do Alan (estáticas) ---------- */
+.dm-g { animation: none !important; }
+.star.dm { animation: none; height: auto; position: absolute; }
+.star.st-burst { width: clamp(150px, 15vw, 270px); left: 39%; top: auto; bottom: 30%; color: var(--h-fg); }
+.star.st-cluster { width: clamp(110px, 11vw, 200px); right: 2%; top: 0; color: var(--h-fg); }
+.star.s1, .star.s2, .star.s3, .star.s4 { display: none; }
+.dm-contact { width: clamp(110px, 12vw, 190px); top: -22%; }
+@media (max-width: 860px) {
+  .star.st-burst { width: 34vw; left: auto; right: -4%; bottom: 40%; }
+  .star.st-cluster { width: 26vw; right: 3%; top: 1%; }
+}
+:root[data-theme="light"] .star.dm { color: #fff; mix-blend-mode: difference; }
+.star.st-burst { width: clamp(220px, 24vw, 400px); left: 30%; bottom: 22%; }

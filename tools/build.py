@@ -113,16 +113,16 @@ def head(title, desc, pre, css, canonical=""):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
-<meta name="theme-color" content="#f2f1ed">
+<meta name="theme-color" content="#121211">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:image" content="{og}">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="{pre}assets/avatar/favicon.png" type="image/png">
+<link rel="icon" href="{pre}assets/avatar/favicon.svg" type="image/svg+xml"><link rel="icon" href="{pre}assets/avatar/favicon.png" type="image/png" sizes="180x180"><link rel="apple-touch-icon" href="{pre}assets/avatar/favicon.png">
 <link rel="preload" href="{pre}assets/fonts/host-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<script>try{{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;var l=localStorage.getItem("lang");if(l==="en")document.documentElement.lang="en"}}catch(e){{}}</script>
+<script>try{{var t=localStorage.getItem("theme")||"dark";document.documentElement.dataset.theme=t;var l=localStorage.getItem("lang");if(l==="en")document.documentElement.lang="en"}}catch(e){{}}</script>
 {links}
 {ga}
 </head>'''
@@ -265,6 +265,7 @@ def sec_contact():
     opts = "".join(f'<option value="{k}" data-i18n="opt.{k}">{e(T["opt." + k]["pt"])}</option>' for k in ["monthly", "ads", "identity", "pieces", "motion", "agency", "other"])
     return f'''<section class="sec contact" id="contato" aria-labelledby="h-ct"><div class="wrap contact-grid">
 <div>
+{star_svg("estrela-2", "dm-contact")}
 <h2 class="contact-big rv" id="h-ct">{tx("contact.title", "span")}</h2>
 <p class="contact-lede rv">{tx("contact.text", "span")}</p>
 <div class="btn-row rv" style="margin-top:28px">{cta_whats()}</div>
@@ -337,6 +338,37 @@ def split_name():
     return out
 
 
+def star_svg(name, cls):
+    """Estrelas pontilhadas desenhadas pelo Alan (tools/estrelas). Cor = currentColor, sem animação."""
+    svg = open(os.path.join(ROOT, f"tools/estrelas/{name}.svg"), encoding="utf-8").read()
+    svg = re.sub(r'\s+fill="(?!none)[^"]*"', "", svg)
+    svg = re.sub(r'<svg width="[^"]*" height="[^"]*"', f'<svg class="dm {cls}" aria-hidden="true" focusable="false"', svg, count=1)
+    svg = svg.replace('fill="none" xmlns', 'fill="currentColor" xmlns', 1)
+    return svg.strip()
+
+
+def dot_sparkle(cls, n=41, seed=1, rays=0.58):
+    """Brilho de 4 pontas feito de pontos (efeito dot matrix / bitmap pontilhado).
+    n = pontos por lado; os pontos rareiam nas pontas para parecer pontilhado."""
+    import random
+    rnd = random.Random(seed)
+    c = (n - 1) / 2
+    groups = ["", "", ""]
+    for yy in range(n):
+        for xx in range(n):
+            x, y = abs(xx - c) / c, abs(yy - c) / c
+            v = x ** rays + y ** rays          # astroide: estrela de 4 pontas
+            if v > 1:
+                continue
+            dens = 1 - v ** 1.4                # mais cheio no centro
+            if rnd.random() > dens * 2.6 + 0.08:
+                continue
+            size = 0.78 if rnd.random() < 0.75 else 0.5
+            groups[rnd.randrange(3)] += f'<rect x="{xx + (1 - size) / 2:.2f}" y="{yy + (1 - size) / 2:.2f}" width="{size}" height="{size}"/>'
+    g = "".join(f'<g class="dm-g dm-g{i}">{d}</g>' for i, d in enumerate(groups))
+    return f'<svg class="dm {cls}" viewBox="0 0 {n} {n}" aria-hidden="true" fill="currentColor" shape-rendering="crispEdges">{g}</svg>'
+
+
 STAR = '<svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M50 0l7.6 31.6L85.4 14.6 68.4 42.4 100 50 68.4 57.6 85.4 85.4 57.6 68.4 50 100 42.4 68.4 14.6 85.4 31.6 57.6 0 50 31.6 42.4 14.6 14.6 42.4 31.6z"/></svg>'
 
 
@@ -394,7 +426,7 @@ def home_v2(pre):
     return f'''<main id="main">
 <section class="hero" aria-label="Apresentação"><div class="wrap hero-grid">
 <div class="hero-pic">{photo}</div>
-{STAR.replace('class="star"', 'class="star s1"')}{STAR.replace('class="star"', 'class="star s2"')}
+{star_svg("estrela-1", "star st-burst")}{star_svg("estrela-2", "star st-cluster")}
 <h1 class="hero-name script-name" aria-label="Alan Veloso">{script_name()}</h1>
 <div class="hero-copy rv" style="--d:300ms">
 <p class="hero-role">{tx("role", "span")}</p>
@@ -410,7 +442,7 @@ def home_v2(pre):
 {motion_videos(pre)}
 <p class="ix-empty" hidden>{tx("work.empty", "span")}</p>
 </div><div class="ix-prev" data-preview aria-hidden="true">{prev_imgs}</div></section>
-{sec_ads(pre)}{sec_services()}{sec_process()}{sec_archive(pre)}{sec_contact()}
+{sec_ads(pre)}{sec_services()}{sec_process()}{sec_contact()}
 </main>'''
 
 

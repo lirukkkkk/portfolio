@@ -82,4 +82,31 @@ b = crop_alpha(load("Arquiteto Breno Lima/Logo/Vector.png"))
 save(on_color(b, olive, TALL, 0.42), "breno-lima.jpg")
 save(on_color(b, olive, WIDE, 0.2), "breno-lima-wide.jpg")
 
+# Capas enviadas pelo Alan (pasta _Capas): versão larga para o topo do case
+from PIL import ImageFilter, ImageDraw
+
+
+def extend_wide(im, size=WIDE, fade=160):
+    """Capa vertical inteira no centro; laterais = a própria capa ampliada e desfocada, com emenda suave."""
+    W, H = size
+    h = H; w = round(im.width * H / im.height)
+    side = (W - w) // 2 + fade
+    # laterais feitas só com a borda da capa (sem a logo), esticada e levemente desfocada
+    lft = im.crop((0, 0, round(im.width * 0.1), im.height)).resize((side, H), Image.LANCZOS)
+    rgt = im.crop((im.width - round(im.width * 0.1), 0, im.width, im.height)).resize((side, H), Image.LANCZOS)
+    bg = Image.new("RGBA", size)
+    bg.paste(lft, (0, 0)); bg.paste(rgt, (W - side, 0))
+    bg = bg.filter(ImageFilter.GaussianBlur(18))
+    fg = im.resize((w, h), Image.LANCZOS)
+    m = Image.new("L", (w, h), 255); d = ImageDraw.Draw(m)
+    for i in range(fade):
+        a = round(255 * i / fade)
+        d.line([(i, 0), (i, h)], fill=a); d.line([(w - 1 - i, 0), (w - 1 - i, h)], fill=a)
+    bg.paste(fg, ((W - w) // 2, 0), m)
+    return bg
+
+
+for slug in ["trafego-pago", "kits-odonto", "cr1a-grime", "ruido", "sucateiro", "cop", "dj-liru"]:
+    save(extend_wide(load(f"_Capas/{slug}.jpg")), f"{slug}-wide.jpg")
+
 print("capas ok:", sorted(os.listdir(OUT)))

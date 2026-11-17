@@ -63,7 +63,8 @@ CASES = [
             "pt": "Criativos de tráfego pago pensados de forma estratégica. Cada peça parte da dor de quem vê o anúncio, mostra a solução e leva direto para a avaliação. As campanhas são montadas em sequência (educa, prova, oferta, última chamada), e o resultado foi mais de 5x na quantidade e na qualidade dos leads.",
             "en": "Paid ads creatives built with strategy. Each piece starts from the viewer's pain point, shows the solution and leads straight to a consultation. Campaigns run in sequence (educate, prove, offer, last call), and the result was more than 5x the quantity and quality of leads.",
         },
-        "cover": "Trafego Pago/Implante 02 - Prova Social.jpg",
+        "cover": "_Capas/trafego-pago.jpg",
+        "banner": "RENDER/covers/trafego-pago-wide.jpg",
         "groups": [
             {"kind": "carousel", "label": {"pt": "Sequência de campanha · implante", "en": "Campaign sequence · implants"}, "items": seq("Trafego Pago", ["Implante 01 - Educativo.jpg", "Implante 02 - Prova Social.jpg", "Implante 03 - Ofertal.jpg", "Implante 04 - Ultima Chamada.jpg"])},
             {"kind": "carousel", "label": {"pt": "Semana do Implante", "en": "Implant Week"}, "items": seq("Trafego Pago", ["Semana do Implante - Anúncio.jpg", "Semana do Implante - Prótese.jpg", "Semana do Implante - Mosaico.jpg", "Semana do Implante - Amanhã.jpg", "Implant Day - Divulgação.jpg"])},
@@ -198,7 +199,8 @@ CASES = [
             "pt": "Uma rede de clínicas odontológicas precisava de conteúdo constante sem que todas as unidades parecessem iguais. Organizei os criativos por cor, não por clínica: sete paletas, cada uma com estáticos e carrosséis prontos sobre prótese, implante, gengiva, diabetes e datas do ano. Cada clínica escolhe o kit que combina com a sua marca.",
             "en": "A network of dental clinics needed steady content without every location looking the same. I organized the creatives by color, not by clinic: seven palettes, each with ready statics and carousels on dentures, implants, gums, diabetes and dates of the year. Each clinic picks the kit that fits its brand.",
         },
-        "cover": "Criativos Genéricos Para Clinicas Odontologicas/Genéricos - Azul Claro/Carrossel/Azul Claro - Carrossel 1 - 1.png",
+        "cover": "_Capas/kits-odonto.jpg",
+        "banner": "RENDER/covers/kits-odonto-wide.jpg",
         "groups": [
             {"kind": "kit", "slug": k[0], "label": {"pt": k[1], "en": k[2]}, "items": k[3]} for k in KITS
         ],
@@ -216,7 +218,8 @@ CASES = [
             "pt": "Peças para as unidades da COP em Francisco Morato, Campo Limpo e Pindamonhangaba: azul royal, respostas objetivas para dúvidas comuns e checklists que o paciente guarda.",
             "en": "Pieces for COP's locations in Francisco Morato, Campo Limpo and Pindamonhangaba: royal blue, direct answers to common questions and checklists patients keep.",
         },
-        "cover": "COP Clínicas Odontológicas/Estático 3 - COP Pinda.jpg",
+        "cover": "_Capas/cop.jpg",
+        "banner": "RENDER/covers/cop-wide.jpg",
         "groups": [
             {"kind": "grid", "label": {"pt": "Feed", "en": "Feed"}, "items": seq("COP Clínicas Odontológicas", ["Carrossel 1 - 1 Pinda.jpg", "Estático 1 - COP Morato.jpg", "Estático 3 - COP Pinda.jpg", "Estático 2 - COP Campo Limpo.jpg", "Estático 4 - COP Morato.jpg", "Estático 3 - COP Campo Limpo.jpg", "Estático 3 - COP Morato.jpg"])},
         ],
@@ -293,7 +296,8 @@ CASES = [
             "pt": "Cr1a Grime é uma festa de grime na Bela Vista, em São Paulo. A cada edição a arte muda de linguagem (festa junina, aniversário de 1 ano, Carnagrime) sem perder o nome forte e a lista de atrações legível.",
             "en": "Cr1a Grime is a grime party in Bela Vista, São Paulo. Each edition changes its visual language (June festival, first anniversary, Carnagrime) while keeping the name strong and the line-up readable.",
         },
-        "cover": "CR1A/VERMELHO.jpg",
+        "cover": "_Capas/cr1a-grime.jpg",
+        "banner": "RENDER/covers/cr1a-grime-wide.jpg",
         "groups": [
             {"kind": "grid", "label": {"pt": "Edições", "en": "Editions"}, "items": seq("CR1A", ["VERMELHO.jpg", "P&B.jpg", "VERMELHO STORIES.jpg", "CarnaGrimeInsta.jpg", "cr1a9.jpg", "Cr1a Grime 18/Frame 6.jpg"])},
             {"kind": "wide", "label": {"pt": "Banner", "en": "Banner"}, "items": seq("CR1A", ["Cr1a Grime 18/Frame 7.jpg"])},
@@ -312,7 +316,8 @@ CASES = [
             "pt": "Para o DJ Sucateiro fiz o logo em lettering agressivo, as agendas do mês com as datas e casas, e flyers de festas como o Bota Fora UNIP. O mesmo logo segura todas as peças, das fotos escuras às capas coloridas.",
             "en": "For DJ Sucateiro I made the aggressive lettering logo, the monthly gig calendars and flyers for parties like Bota Fora UNIP. The same logo holds every piece, from dark photos to colorful covers.",
         },
-        "cover": "AGENDA SUCATEIRO/AGENDAS/AGENDA JUNHO.jpg",
+        "cover": "_Capas/sucateiro.jpg",
+        "banner": "RENDER/covers/sucateiro-wide.jpg",
         "groups": [
             {"kind": "wide", "label": {"pt": "Logo", "en": "Logo"}, "items": seq("AGENDA SUCATEIRO/LOGOS SUCATEIRO", ["sucateiro.png"])},
             {"kind": "grid", "label": {"pt": "Agendas e flyers", "en": "Calendars and flyers"}, "items": seq("AGENDA SUCATEIRO", ["AGENDAS/AGENDA JUNHO.jpg", "AGENDAS/AGENDA SUCATEIRO MARCO ABRIL.jpg", "AGENDAS/agendasucateiro01.jpg", "ATLETICA/FEED.jpg", "ATLETICA/Prancheta 2.jpg", "CAPA SET/Prancheta 1.jpg"])},
@@ -331,7 +336,8 @@ CASES = [
             "pt": "Ruído é uma festa no Cerca Trova Pub, em Tatuí. O logo é simples e elegante; os cartazes mudam tudo a cada edição (ilustração, foto, op-art), e o nome da festa é o único elemento fixo.",
             "en": "Ruído is a party at Cerca Trova Pub in Tatuí. The logo is simple and elegant; the posters change everything each edition (illustration, photo, op-art), with the party name as the only fixed element.",
         },
-        "cover": "RUÍDO /RUIDO04FINAL.jpg",
+        "cover": "_Capas/ruido.jpg",
+        "banner": "RENDER/covers/ruido-wide.jpg",
         "groups": [
             {"kind": "grid", "label": {"pt": "Pôsteres", "en": "Posters"}, "items": seq("RUÍDO ", ["RUIDO FINAL 2.jpg", "RUIDO04.jpg", "RUIDO04FINAL.jpg", "RUIDO06 FINAL.jpg", "RUIDO5FINAL.jpg", "RUIDO LOGO.png"])},
         ],
@@ -370,7 +376,8 @@ CASES = [
             "pt": "DJ Liru é o meu projeto como DJ. Cada set ganha capa própria (Jungle Massive, Real Garage Boy, Grill Romantiku), além dos banners de YouTube e SoundCloud e das thumbnails.",
             "en": "DJ Liru is my own DJ project. Each set gets its own cover (Jungle Massive, Real Garage Boy, Grill Romantiku), plus YouTube and SoundCloud banners and thumbnails.",
         },
-        "cover": "DJ LIRU/JungleMassive.jpg",
+        "cover": "_Capas/dj-liru.jpg",
+        "banner": "RENDER/covers/dj-liru-wide.jpg",
         "groups": [
             {"kind": "grid", "label": {"pt": "Capas de set", "en": "Set covers"}, "items": seq("DJ LIRU", ["JungleMassive.jpg", "REALGARAGEBOYCAPA.jpg", "romantikuSET.jpg"])},
             {"kind": "wide", "label": {"pt": "Banners e thumbnails", "en": "Banners and thumbnails"}, "items": seq("DJ LIRU", ["yt.jpg", "sossthumb.png", "SOUNDCLOUD.jpg"])},
@@ -529,6 +536,6 @@ T = {
     "next": {"pt": "Próxima", "en": "Next"},
     "close": {"pt": "Fechar", "en": "Close"},
     "skip": {"pt": "Pular para o conteúdo", "en": "Skip to content"},
-    "footer": {"pt": "Feito com cuidado em São Paulo.", "en": "Made with care in São Paulo."},
+    "footer": {"pt": "São Paulo", "en": "São Paulo"},
     "sound": {"pt": "Ativar som", "en": "Turn sound on"},
 }

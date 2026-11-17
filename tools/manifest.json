@@ -474,6 +474,44 @@
    "#3f0000"
   ]
  },
+ "_Capas/trafego-pago.jpg": {
+  "base": "assets/img/trafego-pago/843a7760cb",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1507,
+   2000
+  ],
+  "colors": [
+   "#4d15fc",
+   "#2e02fc",
+   "#3e02fc",
+   "#5f2cfc",
+   "#4604fc",
+   "#b497fd"
+  ]
+ },
+ "RENDER/covers/trafego-pago-wide.jpg": {
+  "base": "assets/img/trafego-pago/fbdc24a954",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#4504fc",
+   "#2f02fc",
+   "#5f2dfc",
+   "#4812fc",
+   "#5318fc",
+   "#966ffc"
+  ]
+ },
  "POD+/Thumbnail - Filipe Trabuco EP 6.jpg": {
   "base": "assets/img/pod-mais/6f41fa4cb2",
   "w": [
@@ -2963,6 +3001,44 @@
    "#feffff"
   ]
  },
+ "_Capas/kits-odonto.jpg": {
+  "base": "assets/img/kits-odonto/85c7243d19",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   2000,
+   2654
+  ],
+  "colors": [
+   "#ffffff",
+   "#e5f4ff",
+   "#f8ffff",
+   "#edfdff",
+   "#f0ffff",
+   "#b9adfa"
+  ]
+ },
+ "RENDER/covers/kits-odonto-wide.jpg": {
+  "base": "assets/img/kits-odonto/b4cba6b254",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#ffffff",
+   "#eefcfe",
+   "#cecefa",
+   "#f1ffff",
+   "#f9ffff",
+   "#fffffd"
+  ]
+ },
  "COP Clínicas Odontológicas/Carrossel 1 - 1 Pinda.jpg": {
   "base": "assets/img/cop/bce784cb03",
   "w": [
@@ -3094,6 +3170,44 @@
    "#e7e9ff",
    "#f0f2ff",
    "#feffff"
+  ]
+ },
+ "_Capas/cop.jpg": {
+  "base": "assets/img/cop/49459254bb",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1780,
+   2080
+  ],
+  "colors": [
+   "#050a30",
+   "#131b53",
+   "#676c99",
+   "#070c35",
+   "#030b3a",
+   "#01052f"
+  ]
+ },
+ "RENDER/covers/cop-wide.jpg": {
+  "base": "assets/img/cop/d78194ede2",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#050a30",
+   "#0e1446",
+   "#060b32",
+   "#3b4277",
+   "#050b2f",
+   "#01052f"
   ]
  },
  "Raggaclubbersz/Hallowgrime/HallowGrime 1.jpg": {
@@ -3704,6 +3818,44 @@
    "#7a756a"
   ]
  },
+ "_Capas/cr1a-grime.jpg": {
+  "base": "assets/img/cr1a-grime/15f17c562e",
+  "w": [
+   480,
+   960
+  ],
+  "ratio": [
+   1093,
+   1453
+  ],
+  "colors": [
+   "#3b3731",
+   "#2f2e29",
+   "#292925",
+   "#22221f",
+   "#b5bb9f",
+   "#514541"
+  ]
+ },
+ "RENDER/covers/cr1a-grime-wide.jpg": {
+  "base": "assets/img/cr1a-grime/cc59acdc43",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#2e2e29",
+   "#20201c",
+   "#3b3732",
+   "#272723",
+   "#252520",
+   "#757466"
+  ]
+ },
  "AGENDA SUCATEIRO/LOGOS SUCATEIRO/sucateiro.png": {
   "base": "assets/img/sucateiro/d41c79e40f",
   "w": [
@@ -3837,6 +3989,44 @@
    "#1e0001"
   ]
  },
+ "_Capas/sucateiro.jpg": {
+  "base": "assets/img/sucateiro/06ebfd3202",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1229,
+   1490
+  ],
+  "colors": [
+   "#c6c6c6",
+   "#cacac9",
+   "#d1d1d1",
+   "#cbcbcb",
+   "#cdcdcd",
+   "#6f6f6f"
+  ]
+ },
+ "RENDER/covers/sucateiro-wide.jpg": {
+  "base": "assets/img/sucateiro/b68c733cd8",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#c7c7c7",
+   "#cacaca",
+   "#cfcfcf",
+   "#cccccc",
+   "#c9c9c9",
+   "#989898"
+  ]
+ },
  "RUÍDO /RUIDO FINAL 2.jpg": {
   "base": "assets/img/ruido/d36244235d",
   "w": [
@@ -3949,6 +4139,44 @@
    "#1e1e1e",
    "#1a1a1a",
    "#797979"
+  ]
+ },
+ "_Capas/ruido.jpg": {
+  "base": "assets/img/ruido/2262dc12ce",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1229,
+   1490
+  ],
+  "colors": [
+   "#222222",
+   "#474746",
+   "#f7f7f7",
+   "#1a1a1a",
+   "#1f1f1f",
+   "#b5b5b5"
+  ]
+ },
+ "RENDER/covers/ruido-wide.jpg": {
+  "base": "assets/img/ruido/3dc77c7723",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#222222",
+   "#212121",
+   "#ababab",
+   "#4b4b4b",
+   "#1d1d1d",
+   "#151515"
   ]
  },
  "CASSIEL/RAINHADADANCAFINAL.jpg": {
@@ -4139,6 +4367,44 @@
    "#862e0d",
    "#96633b",
    "#6b0203"
+  ]
+ },
+ "_Capas/dj-liru.jpg": {
+  "base": "assets/img/dj-liru/7e09a357ad",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1229,
+   1490
+  ],
+  "colors": [
+   "#0c1201",
+   "#0d0f01",
+   "#0c1401",
+   "#0c0d01",
+   "#1b2206",
+   "#0b1200"
+  ]
+ },
+ "RENDER/covers/dj-liru-wide.jpg": {
+  "base": "assets/img/dj-liru/4d915b8487",
+  "w": [
+   800,
+   1600
+  ],
+  "ratio": [
+   1920,
+   1080
+  ],
+  "colors": [
+   "#0c1301",
+   "#0d0f01",
+   "#0d0d01",
+   "#0d1101",
+   "#131b03",
+   "#0b1001"
   ]
  },
  "FOTO/alan-centro-sp.jpg": {
