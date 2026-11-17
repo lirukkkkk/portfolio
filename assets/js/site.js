@@ -360,6 +360,44 @@
     form.addEventListener("input", (e) => { if (e.target.hasAttribute("aria-invalid")) e.target.removeAttribute("aria-invalid"); });
   }
 
+
+  /* ---------- Compartilhar ---------- */
+  const shareBtn = document.querySelector("[data-share]");
+  if (shareBtn) {
+    const pop = shareBtn.parentElement.querySelector(".share-pop");
+    const url = location.href.split("#")[0];
+    const title = document.title;
+    const msg = (document.documentElement.lang === "en" ? "Check out Alan Veloso's portfolio: " : "Olha o portfólio do Alan Veloso: ") + url;
+    pop.querySelector("[data-share-whats]").href = "https://wa.me/?text=" + encodeURIComponent(msg);
+    pop.querySelector("[data-share-mail]").href = "mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(msg);
+    const close = () => { pop.hidden = true; shareBtn.setAttribute("aria-expanded", "false"); };
+    const touch = matchMedia("(hover: none), (pointer: coarse)").matches;
+    shareBtn.addEventListener("click", async (ev) => {
+      ev.stopPropagation();
+      if (touch && navigator.share) {          /* celular: tela de compartilhar do aparelho */
+        try { await navigator.share({ title, text: msg.replace(url, "").trim(), url }); } catch (e) {}
+        return;
+      }
+      const open = pop.hidden;                  /* computador: menu com copiar, WhatsApp e e-mail */
+      pop.hidden = !open;
+      shareBtn.setAttribute("aria-expanded", String(open));
+    });
+    pop.querySelector("[data-share-copy]").addEventListener("click", async (ev) => {
+      const b = ev.currentTarget, label = b.querySelector("span");
+      try { await navigator.clipboard.writeText(url); } catch (e) {
+        const t = document.createElement("textarea"); t.value = url; document.body.appendChild(t); t.select();
+        try { document.execCommand("copy"); } catch (e2) {} t.remove();
+      }
+      const old = label.textContent;
+      label.textContent = (window.I18N && document.documentElement.lang === "en") ? I18N["share.copied"] : "Link copiado";
+      b.classList.add("ok");
+      setTimeout(() => { label.textContent = old; b.classList.remove("ok"); close(); }, 1400);
+    });
+    pop.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setTimeout(close, 100)));
+    document.addEventListener("click", (ev) => { if (!pop.hidden && !pop.contains(ev.target)) close(); });
+    document.addEventListener("keydown", (ev) => { if (ev.key === "Escape" && !pop.hidden) { close(); shareBtn.focus(); } });
+  }
+
   /* ---------- Cursor preview (index lists) ---------- */
   const prevBox = document.querySelector("[data-preview]");
   if (prevBox && finePointer) {
