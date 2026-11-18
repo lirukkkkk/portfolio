@@ -558,7 +558,7 @@ T = {
     "palettes.title": {"pt": "Sete paletas, uma pauta", "en": "Seven palettes, one plan"},
     "palettes.text": {"pt": "Toque numa paleta para ir direto às peças.", "en": "Tap a palette to jump to its pieces."},
     "services.title": {"pt": "O que eu faço", "en": "What I do"},
-    "services.note": {"pt": "Planos mensais a partir de R$ 450, ou peças avulsas.", "en": "Monthly plans from R$ 450, or one-off pieces."},
+    "services.note": {"pt": "Cada projeto tem um orçamento sob medida. Me conta o que você precisa.", "en": "Every project gets a custom quote. Tell me what you need."},
     "process.title": {"pt": "Como trabalho", "en": "How I work"},
     "about.title": {"pt": "Sobre", "en": "About"},
     "about.hi": {"pt": "Prazer, Alan", "en": "Nice to meet you"},

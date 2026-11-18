@@ -8,7 +8,7 @@ from content import *  # noqa
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
 MAN = json.load(open(os.path.join(ROOT, "tools/manifest.json")))
-SITE_URL = "https://lirukkkkk.github.io/portfolio"
+SITE_URL = "https://alanveloso.com.br"
 GA_ID = ""     # ex.: G-XXXXXXX
 I18N = {k: v["en"] for k, v in T.items()}
 CASES = sorted(CASES, key=lambda c: ORDER.index(c["slug"]))
@@ -140,14 +140,13 @@ def header(pre, home):
     home = home or "./"
     nav = [("nav.work", "trabalhos"), ("nav.ads", "trafego"), ("nav.services", "servicos"), ("nav.about", "sobre"), ("nav.contact", "contato")]
     links = "".join(f'<a href="{home}#{a}" >{tx(k)}</a>' for k, a in nav[:3])
-    links += f'<a href="{home}planos.html">{tx("nav.plans")}</a>'
     links += "".join(f'<a href="{home}#{a}" >{tx(k)}</a>' for k, a in nav[3:])
     return f'''<a class="skip" href="#main" data-i18n="skip">{T["skip"]["pt"]}</a>
 <header class="top"><div class="wrap">
 <a class="brand" href="{home}">Alan Veloso</a>
 <nav class="nav" aria-label="Principal">{links}</nav>
 <div class="tools">
-<a class="nav-m" href="{home}planos.html">{tx("nav.plans")}</a>
+<a class="nav-m" href="{home}#contato">{tx("nav.contact")}</a>
 <button class="icon-btn" type="button" data-lang-toggle aria-label="{T["lang"]["pt"]}" data-i18n-attr="aria-label:lang">EN</button>
 <button class="icon-btn" type="button" data-theme-toggle aria-label="{T["theme"]["pt"]}" data-i18n-attr="aria-label:theme">{ICON["moon"]}{ICON["sun"]}</button>
 </div></div></header>'''
@@ -222,7 +221,7 @@ def sec_services():
     for i, (h, p) in enumerate(SERVICES):
         items += f'<li class="rv"><h3>{f"<span data-i18n=svc.h{i}>"}{lt(f"svc.h{i}", h)}</span></h3><p data-i18n="svc.p{i}">{lt(f"svc.p{i}", p)}</p></li>'
     return f'''<section class="sec" id="servicos" aria-labelledby="h-svc"><div class="wrap">
-<div class="sec-head"><h2 class="sec-title rv" id="h-svc">{tx("services.title", "span")}</h2><div class="sec-note rv"><p>{tx("services.note", "span")}</p><a class="link-arr" href="planos.html">{tx("plans.see")}{ICON["arr"]}</a></div></div>
+<div class="sec-head"><h2 class="sec-title rv" id="h-svc">{tx("services.title", "span")}</h2><div class="sec-note rv"><p>{tx("services.note", "span")}</p><a class="link-arr" href="#contato">{tx("plans.custom.cta")}{ICON["arr"]}</a></div></div>
 <ol class="svc">{items}</ol></div></section>'''
 
 
@@ -620,7 +619,6 @@ DESC = "Alan Veloso, designer em São Paulo. Social media, criativos para tráfe
 
 page = head("Alan Veloso — Social media e branding", DESC, "", ["base", "home"]) + "<body>" + header("", "./") + home_v2("") + footer("")
 write("index.html", page)
-write("planos.html", plans_page())
 
 
 for i, c in enumerate(CASES):

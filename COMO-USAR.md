@@ -37,7 +37,7 @@ python3 tools/build.py
 
 ## Publicar
 
-O site está em **https://lirukkkkk.github.io/portfolio/** (repositório github.com/lirukkkkk/portfolio).
+O site está em **https://alanveloso.com.br/** (repositório github.com/lirukkkkk/portfolio).
 
 Depois de mudar qualquer coisa, rode:
 
