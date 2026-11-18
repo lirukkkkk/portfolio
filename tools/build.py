@@ -645,7 +645,7 @@ def write(path, html):
 
 DESC = "Alan Veloso, designer em São Paulo. Social media, criativos para tráfego pago, identidade visual e motion para marcas e agências."
 
-page = head("Alan Veloso — Social media e branding", DESC, "", ["base", "home"]) + "<body>" + header("", "./") + home_v2("") + footer("")
+page = head("Alan Veloso — Design", DESC, "", ["base", "home"]) + "<body>" + header("", "./") + home_v2("") + footer("")
 write("index.html", page)
 
 
