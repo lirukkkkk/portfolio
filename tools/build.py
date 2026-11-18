@@ -168,6 +168,7 @@ def footer(pre):
 </div>
 <span><a href="{INSTAGRAM}" rel="noopener" target="_blank">Instagram</a> · <a href="{BEHANCE}" rel="noopener" target="_blank">Behance</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></span>
 </div></footer>
+<a class="wa-float" href="{wa_link()}" target="_blank" rel="noopener" aria-label="{T["cta.whats"]["pt"]}" data-i18n-attr="aria-label:cta.whats" data-wa-float>{ICON["wa"]}</a>
 <dialog class="lb" aria-label="Imagem ampliada">
 <div class="lb-bar"><span class="lb-cap"></span><button class="icon-btn" type="button" data-lb-close aria-label="{T["close"]["pt"]}" data-i18n-attr="aria-label:close">{ICON["x"]}</button></div>
 <div class="lb-stage"><button class="icon-btn" type="button" data-lb-prev aria-label="{T["prev"]["pt"]}" data-i18n-attr="aria-label:prev">{ICON["l"]}</button><div class="lb-pic"></div><button class="icon-btn" type="button" data-lb-next aria-label="{T["next"]["pt"]}" data-i18n-attr="aria-label:next">{ICON["r"]}</button></div>
@@ -216,13 +217,38 @@ def tags(c):
 
 # ---------- shared home sections ----------
 
+CLIENT_LOGOS = [("next-step", "Next Step"), ("pod-mais", "POD+"), ("inovorto", "InovOrto"), ("breno-lima", "Arquiteto Breno Lima"),
+                ("brenda-seda", "Dra. Brenda Seda"), ("cop", "COP Clínicas Odontológicas"), ("cr1a-grime", "Cr1a Grime"),
+                ("terra-a-vista", "Terra à Vista"), ("ruido", "Ruído"), ("sucateiro", "DJ Sucateiro")]
+
+
+def sec_logos(pre):
+    from PIL import Image
+    items = ""
+    for slug, name in CLIENT_LOGOS:
+        w, h = Image.open(os.path.join(SITE, f"assets/logos/{slug}.png")).size
+        ratio = w / h
+        scale = 0.62 if ratio > 3 else (1.15 if ratio < 1 else 1)   # palavras longas menores, símbolos um pouco maiores
+        url = f"{pre}assets/logos/{slug}.png"
+        items += (f'<a class="logo" href="{pre}trabalhos/{slug}.html" aria-label="{e(name)}" title="{e(name)}" '
+                  f'style="--r:{ratio:.3f};--s:{scale if slug != "brenda-seda" else 0.8};-webkit-mask-image:url({url});mask-image:url({url})"></a>')
+    return f'''<section class="logos" aria-labelledby="h-logos"><div class="wrap">
+<h2 class="logos-title rv" id="h-logos">{tx("logos.title", "span")}</h2>
+<div class="logos-row rv">{items}</div></div></section>'''
+
+
 def sec_services():
     items = ""
-    for i, (h, p) in enumerate(SERVICES):
-        items += f'<li class="rv"><h3>{f"<span data-i18n=svc.h{i}>"}{lt(f"svc.h{i}", h)}</span></h3><p data-i18n="svc.p{i}">{lt(f"svc.p{i}", p)}</p></li>'
-    return f'''<section class="sec" id="servicos" aria-labelledby="h-svc"><div class="wrap">
+    for i, (h, p, cat) in enumerate(SERVICES):
+        if cat:
+            act = f'<button type="button" class="svc-go" data-goto-cat="{cat}">{tx("svc.see")}{ICON["arr"]}</button>'
+        else:
+            act = f'<a class="svc-go" href="#contato">{tx("svc.talk")}{ICON["arr"]}</a>'
+        items += (f'<li class="rv" style="--d:{i*50}ms"><span class="svc-n">{i+1:02d}</span><h3 data-i18n="svc.h{i}">{lt(f"svc.h{i}", h)}</h3>'
+                  f'<p data-i18n="svc.p{i}">{lt(f"svc.p{i}", p)}</p>{act}</li>')
+    return f'''<section class="sec svc-sec" id="servicos" aria-labelledby="h-svc"><div class="wrap">
 <div class="sec-head"><h2 class="sec-title rv" id="h-svc">{tx("services.title", "span")}</h2><div class="sec-note rv"><p>{tx("services.note", "span")}</p><a class="link-arr" href="#contato">{tx("plans.custom.cta")}{ICON["arr"]}</a></div></div>
-<ol class="svc">{items}</ol></div></section>'''
+<ol class="svc-grid">{items}</ol></div></section>'''
 
 
 def sec_process():
@@ -304,7 +330,7 @@ def sec_contact():
 <div class="field"><label for="f-refs">{tx("form.refs")}</label><input id="f-refs" name="refs" inputmode="url"></div>
 <div class="field full"><label for="f-msg">{tx("form.msg")}</label><textarea id="f-msg" name="msg" rows="4"></textarea></div>
 <p class="form-msg" role="status" aria-live="polite"></p>
-<div class="form-foot"><button class="btn" type="submit" name="via" value="whats">{ICON["wa"]}{tx("form.send.whats")}</button><button class="btn ghost" type="submit" name="via" value="mail">{tx("form.send.mail")}</button></div>
+<div class="form-foot"><button class="btn ghost" type="submit" name="via" value="whats">{tx("form.send")}{ICON["arr"]}</button><button class="link-btn" type="submit" name="via" value="mail">{tx("form.or.mail")}</button></div>
 <p class="form-msg" style="margin-top:-6px">{tx("form.hint", "span")}</p>
 </form>
 </div></section>'''
@@ -449,10 +475,12 @@ def home_v2(pre):
 <div class="hero-copy rv" style="--d:300ms">
 <p class="hero-role">{tx("role", "span")}</p>
 <p class="hero-tag">{tx("tagline", "span")}</p>
-<div class="btn-row">{cta_whats("btn light")}<span class="avail">{tx("available")}</span></div>
+<div class="btn-row"><span class="avail">{tx("available")}</span></div>
 </div>
 </div></section>
+{sec_logos(pre)}
 {sec_about(pre)}
+{sec_services()}
 {marquee()}
 <section class="sec v2-work" id="trabalhos" aria-labelledby="h-work"><div class="wrap">
 <div class="sec-head"><h2 class="sec-title rv" id="h-work">{tx("work.title", "span")}</h2>{cat_chips("#ix")}</div>
@@ -460,7 +488,7 @@ def home_v2(pre):
 {motion_videos(pre)}
 <p class="ix-empty" hidden>{tx("work.empty", "span")}</p>
 </div><div class="ix-prev" data-preview aria-hidden="true">{prev_imgs}</div></section>
-{sec_ads(pre)}{sec_services()}{sec_process()}{sec_contact()}
+{sec_ads(pre)}{sec_process()}{sec_contact()}
 </main>'''
 
 

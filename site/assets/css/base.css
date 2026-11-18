@@ -500,3 +500,56 @@ html { scrollbar-color: var(--line) transparent; }
 
 .modes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 860px) { .modes { grid-template-columns: 1fr; } .mode-card, .mode-card + .mode-card, .mode-card:nth-child(even) { padding: 20px 0; border-left: 0; } }
+
+/* ---------- Serviços compactos (antes dos trabalhos) ---------- */
+.scroll-bar { display: none; }
+.svc-sec { padding-top: clamp(56px, 8vw, 110px); }
+.svc-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.svc-grid li { display: flex; flex-direction: column; gap: 8px; padding: 22px 24px 24px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.svc-grid li:not(:nth-child(3n+1)) { padding-left: 24px; border-left: 1px solid var(--line); }
+.svc-n { color: var(--mute); font-size: 14px; font-variant-numeric: tabular-nums; }
+.svc-grid h3 { font-size: clamp(22px, 2vw, 28px); font-weight: 500; letter-spacing: -0.025em; line-height: 1.1; margin: 0; }
+.svc-grid p { color: var(--ink-2); font-size: 16px; line-height: 1.45; margin: 0; flex: 1; }
+.svc-go { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin-top: 8px; padding: 0; border: 0; background: none; font: inherit; font-size: 15px; font-weight: 500; color: var(--ink); cursor: pointer; text-decoration: none; }
+.svc-go svg { width: 15px; height: 15px; transition: transform 220ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .svc-go:hover { color: var(--accent); } .svc-go:hover svg { transform: translateX(3px); } }
+.svc-go:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+@media (max-width: 860px) {
+  .svc-grid { grid-template-columns: 1fr 1fr; }
+  .svc-grid li, .svc-grid li:not(:nth-child(3n+1)) { padding: 20px 16px 20px 0; border-left: 0; }
+  .svc-grid li:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+}
+@media (max-width: 520px) {
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-grid li:nth-child(even) { padding-left: 0; border-left: 0; }
+}
+
+/* ---------- Faixa de logos dos clientes ---------- */
+.logos { padding-block: clamp(40px, 6vw, 72px) 0; }
+.logos-title { font-size: 14px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); margin: 0 0 22px; }
+.logos-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(22px, 3vw, 44px) clamp(28px, 4vw, 56px); padding-block: 26px; border-block: 1px solid var(--line); }
+.logo { --h: clamp(26px, 2.6vw, 38px); display: block; height: calc(var(--h) * var(--s)); aspect-ratio: var(--r); background: var(--mute);
+  -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; transition: background-color 200ms ease; }
+@media (hover: hover) and (pointer: fine) { .logo:hover { background: var(--ink); } }
+.logo:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 4px; }
+@media (max-width: 600px) { .logos-row { justify-content: center; } .logo { --h: 24px; } }
+
+/* ---------- Formulário: um botão + link de e-mail ---------- */
+.form-foot { align-items: center; }
+.link-btn { background: none; border: 0; padding: 4px 2px; font: inherit; font-size: 15px; color: var(--ink-2); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.link-btn:hover { color: var(--accent); }
+
+/* ---------- WhatsApp fixo no celular ---------- */
+.wa-float { display: none; }
+@media (max-width: 860px), (hover: none) {
+  .wa-float { display: grid; place-items: center; position: fixed; z-index: 60; width: 56px; height: 56px; border-radius: 999px;
+    right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    background: #1fae5b; color: #fff; box-shadow: 0 12px 28px -10px rgb(0 0 0 / .55);
+    opacity: 0; transform: translateY(16px) scale(.9); pointer-events: none; transition: opacity 220ms ease, transform 260ms var(--ease-out); }
+  .wa-float svg { width: 28px; height: 28px; }
+  .wa-float.on { opacity: 1; transform: none; pointer-events: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .wa-float { transition: none; } }
+.logo { --h: clamp(30px, 3vw, 44px); }
+.logo[aria-label="Dra. Brenda Seda"] { --s: .8 !important; }
+@media (max-width: 600px) { .logo { --h: 26px; } }

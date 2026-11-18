@@ -89,7 +89,7 @@ pages.append(f'''<section class="pg cover">
 </section>''')
 
 # 2. sobre + serviços
-svc = "".join(f'<li><span class="n">{i+1:02d}</span><div><h3>{e(h["pt"])}</h3><p>{e(p["pt"])}</p></div></li>' for i, (h, p) in enumerate(SERVICES))
+svc = "".join(f'<li><span class="n">{i+1:02d}</span><div><h3>{e(h["pt"])}</h3><p>{e(p["pt"])}</p></div></li>' for i, (h, p, _c) in enumerate(SERVICES))
 pages.append(f'''<section class="pg about">
 <div class="col">
 <p class="pill">{e(T["about.hi"]["pt"])}</p>

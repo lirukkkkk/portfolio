@@ -232,26 +232,15 @@
     });
   });
   document.addEventListener("click", (e) => {
-    const m = e.target.closest(".mq-btn");
+    const m = e.target.closest(".mq-btn, [data-goto-cat]");
     if (!m) return;
     const bar = document.querySelector('[data-filter="#ix"]');
     if (!bar) return;
-    const seg = m.classList.contains("on") ? "all" : m.dataset.cat;
+    const seg = m.dataset.gotoCat || (m.classList.contains("on") ? "all" : m.dataset.cat);
     setFilter(bar, seg);
     document.getElementById("trabalhos").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
   });
 
-  /* ---------- Scroll progress ---------- */
-  const bar = document.createElement("div");
-  bar.className = "scroll-bar";
-  bar.setAttribute("aria-hidden", "true");
-  document.body.appendChild(bar);
-  const onProg = () => {
-    const max = document.documentElement.scrollHeight - innerHeight;
-    bar.style.transform = "scaleX(" + (max > 0 ? Math.min(1, scrollY / max) : 0) + ")";
-  };
-  addEventListener("scroll", () => requestAnimationFrame(onProg), { passive: true });
-  onProg();
 
   /* ---------- Marquee: steady drift, drag to scrub ---------- */
   $$("[data-marquee]").forEach((mq) => {
@@ -396,6 +385,18 @@
     pop.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setTimeout(close, 100)));
     document.addEventListener("click", (ev) => { if (!pop.hidden && !pop.contains(ev.target)) close(); });
     document.addEventListener("keydown", (ev) => { if (ev.key === "Escape" && !pop.hidden) { close(); shareBtn.focus(); } });
+  }
+
+
+  /* ---------- WhatsApp fixo (celular): aparece depois do topo, some perto do contato ---------- */
+  const waf = document.querySelector("[data-wa-float]");
+  if (waf) {
+    const end = document.getElementById("contato") || document.querySelector(".foot");
+    let pastHero = false, nearEnd = false;
+    const upd = () => waf.classList.toggle("on", pastHero && !nearEnd);
+    const onScroll = () => { pastHero = scrollY > innerHeight * 0.6; upd(); };
+    addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    if (end) new IntersectionObserver((en) => { nearEnd = en[0].isIntersecting; upd(); }, { rootMargin: "0px 0px -20% 0px" }).observe(end);
   }
 
   /* ---------- Cursor preview (index lists) ---------- */
